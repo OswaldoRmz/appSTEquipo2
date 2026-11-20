@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lytTicketPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7dp"
+    android:background="@drawable/borde_tarjeta_9"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="52dp"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/txtPrioridadTicketPanel"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_redondeado_8"
+        android:backgroundTint="#FBECEE"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:textColor="#BD5559"
+        android:textSize="11sp"
+        tools:text="Alta"/>
+
+    <LinearLayout
+        android:id="@+id/lytTextosTicketPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtTituloTicketPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="#354858"
+            android:textSize="12sp"
+            tools:text="Proyector no enciende"/>
+
+        <TextView
+            android:id="@+id/txtDetalleTicketPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="#929CA4"
+            android:textSize="11sp"
+            tools:text="Aula B-204 · Hace 8 min"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgFlechaTicketPanel"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="9dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_chevron"
+        android:tint="#9BA5AD"/>
+</LinearLayout>

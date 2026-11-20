@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFCFD"
+    android:orientation="vertical"
+    tools:context=".Vista.SolicitarPrestamoActivity">
+
+    <LinearLayout
+        android:id="@+id/lytBarraSuperiorPrestamo"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresarPrestamo"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Regresar"
+            android:padding="6.5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_atras"
+            android:tint="#405365"/>
+
+        <TextView
+            android:id="@+id/txtTituloPrestamo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Solicitar préstamo"
+            android:textColor="#142D45"
+            android:textSize="15.5sp"/>
+
+        <View
+            android:id="@+id/vwEspacioDerechoPrestamo"
+            android:layout_width="33dp"
+            android:layout_height="33dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vwDivisorBarraSuperiorPrestamo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8ECEF"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scvSolicitarPrestamo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/lytContenidoPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lytPasosPrestamo"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgPasoCompletado"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_circulo"
+                    android:backgroundTint="#2B9564"
+                    android:contentDescription="Paso 1 completado"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_check"
+                    android:tint="#FFFFFF"/>
+
+                <View
+                    android:id="@+id/vwLineaPaso1"
+                    android:layout_width="42dp"
+                    android:layout_height="1dp"
+                    android:background="#D8DFE4"/>
+
+                <TextView
+                    android:id="@+id/txtPasoActual"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="-4dp"
+                    android:layout_marginEnd="-4dp"
+                    android:background="@drawable/paso_activo"
+                    android:contentDescription="Paso 2 de 3"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"/>
+
+                <View
+                    android:id="@+id/vwLineaPaso2"
+                    android:layout_width="42dp"
+                    android:layout_height="1dp"
+                    android:background="#D8DFE4"/>
+
+                <TextView
+                    android:id="@+id/txtPasoPendiente"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/paso_pendiente"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="#8A98A3"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytEquipoSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="17dp"
+                android:background="@drawable/fondo_redondeado_11"
+                android:backgroundTint="#EEF4F7"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="11dp">
+
+                <ImageView
+                    android:id="@+id/imgEquipoSeleccionado"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/fondo_redondeado_8"
+                    android:contentDescription="@null"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_monitor"
+                    android:tint="#225176"/>
+
+                <LinearLayout
+                    android:id="@+id/lytTextosEquipoSeleccionado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaEquipoSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:letterSpacing="0.045"
+                        android:text="EQUIPO SELECCIONADO"
+                        android:textColor="#8195A5"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/txtNombreEquipoSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Monitor Easer"
+                        android:textColor="#173852"
+                        android:textSize="12.5sp"/>
+
+                    <TextView
+                        android:id="@+id/txtEstadoEquipoSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="EQ-024 · Disponible"
+                        android:textColor="#27885A"
+                        android:textSize="11.5sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnCambiarEquipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_bold"
+                    android:padding="6dp"
+                    android:text="Cambiar"
+                    android:textColor="#247B53"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytFormularioPrestamo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="12dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
+
+                <LinearLayout
+                    android:id="@+id/lytGrupoFechaPrestamo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaFechaPrestamo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Fecha de préstamo"
+                        android:textColor="#34495C"
+                        android:textSize="13.5sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytCampoFechaPrestamo"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/borde_campo_formulario"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgIconoFechaPrestamo"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_calendario"
+                            android:tint="#7890A2"/>
+
+                        <TextView
+                            android:id="@+id/txtFechaPrestamo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textColor="#34495B"
+                            android:textSize="13sp"
+                            tools:text="Lunes, 24 de junio"/>
+
+                        <ImageView
+                            android:id="@+id/imgFlechaFechaPrestamo"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_chevron"
+                            android:tint="#7890A2"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytGrupoFechaDevolucion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaFechaDevolucion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Fecha de devolución"
+                        android:textColor="#34495C"
+                        android:textSize="13.5sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytCampoFechaDevolucion"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/borde_campo_formulario"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgIconoFechaDevolucion"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_calendario"
+                            android:tint="#7890A2"/>
+
+                        <TextView
+                            android:id="@+id/txtFechaDevolucion"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textColor="#34495B"
+                            android:textSize="13sp"
+                            tools:text="Miércoles, 26 de junio"/>
+
+                        <ImageView
+                            android:id="@+id/imgFlechaFechaDevolucion"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_chevron"
+                            android:tint="#7890A2"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytGrupoHoraEntrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaHoraEntrega"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Hora entrega"
+                        android:textColor="#34495C"
+                        android:textSize="13.5sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytCampoHoraEntrega"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/borde_campo_formulario"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgIconoHoraEntrega"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_reloj"
+                            android:tint="#7890A2"/>
+
+                        <TextView
+                            android:id="@+id/txtHoraEntrega"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textColor="#34495B"
+                            android:textSize="13sp"
+                            tools:text="10:00 AM"/>
+
+                        <ImageView
+                            android:id="@+id/imgFlechaHoraEntrega"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_chevron"
+                            android:tint="#7890A2"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytGrupoHoraDevolucion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaHoraDevolucion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Hora devolución"
+                        android:textColor="#34495C"
+                        android:textSize="13.5sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytCampoHoraDevolucion"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/borde_campo_formulario"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgIconoHoraDevolucion"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_reloj"
+                            android:tint="#7890A2"/>
+
+                        <TextView
+                            android:id="@+id/txtHoraDevolucion"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textColor="#34495B"
+                            android:textSize="13sp"
+                            tools:text="04:00 PM"/>
+
+                        <ImageView
+                            android:id="@+id/imgFlechaHoraDevolucion"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_chevron"
+                            android:tint="#7890A2"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytGrupoMotivoPrestamo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lytEncabezadoMotivoPrestamo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtEtiquetaMotivoPrestamo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="Motivo del préstamo"
+                            android:textColor="#34495C"
+                            android:textSize="13.5sp"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edtMotivoPrestamo"
+                        android:layout_width="match_parent"
+                        android:layout_height="66dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/borde_campo_formulario"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="top|start"
+                        android:hint="Describe brevemente el uso del equipo..."
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:lineSpacingExtra="4sp"
+                        android:padding="10dp"
+                        android:textColor="#465969"
+                        android:textColorHint="#A0AAB2"
+                        android:textSize="12.5sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/vwDivisorBarraAccionPrestamo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5EAED"/>
+
+    <LinearLayout
+        android:id="@+id/lytBarraAccionPrestamo"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp">
+
+        <Space
+            android:id="@+id/spcBarraAccionPrestamo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnContinuarPrestamo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:fontFamily="@font/inter_bold"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:letterSpacing="0"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:paddingEnd="19dp"
+            android:paddingStart="19dp"
+            android:text="Continuar"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:backgroundTint="#0C3155"
+            app:cornerRadius="9dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_flecha"
+            app:iconGravity="textEnd"
+            app:iconPadding="8dp"
+            app:iconSize="16dp"
+            app:iconTint="#FFFFFF"/>
+    </LinearLayout>
+</LinearLayout>

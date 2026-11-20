@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFCFD"
+    android:orientation="vertical"
+    tools:context=".Vista.ReportarProblemaActivity">
+
+    <LinearLayout
+        android:id="@+id/lytBarraSuperiorReporte"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresarReporte"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Regresar"
+            android:padding="6.5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_atras"
+            android:tint="#405365"/>
+
+        <TextView
+            android:id="@+id/txtTituloReporte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Reportar problema"
+            android:textColor="#142D45"
+            android:textSize="15.5sp"/>
+
+        <View
+            android:id="@+id/vwEspacioDerechoReporte"
+            android:layout_width="33dp"
+            android:layout_height="33dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vwDivisorBarraSuperiorReporte"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8ECEF"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scvReportarProblema"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/lytFormularioReporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/lytGrupoAreaLaboratorio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtEtiquetaAreaLaboratorio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Área o laboratorio"
+                    android:textColor="#34495C"
+                    android:textSize="13.5sp"/>
+
+                <LinearLayout
+                    android:id="@+id/lytCampoAreaLaboratorio"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/borde_campo_formulario"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoAreaLaboratorio"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_casa"
+                        android:tint="#7890A2"/>
+
+                    <TextView
+                        android:id="@+id/txtAreaLaboratorio"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textColor="#34495B"
+                        android:textSize="13sp"
+                        tools:text="Laboratorio de Cómputo 2"/>
+
+                    <ImageView
+                        android:id="@+id/imgFlechaAreaLaboratorio"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron"
+                        android:tint="#7890A2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtEtiquetaTipoProblema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Tipo de problema"
+                android:textColor="#34495C"
+                android:textSize="13.5sp"/>
+
+            <RadioGroup
+                android:id="@+id/rdgTipoProblema"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:checkedButton="@+id/rdbProblemaRed"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdbProblemaEquipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/selector_chip_opcion"
+                    android:button="@null"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="Equipo"
+                    android:textColor="@color/texto_chip_opcion"
+                    android:textSize="12sp"/>
+
+                <RadioButton
+                    android:id="@+id/rdbProblemaRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/selector_chip_opcion"
+                    android:button="@null"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="Red / Internet"
+                    android:textColor="@color/texto_chip_opcion"
+                    android:textSize="12sp"/>
+
+                <RadioButton
+                    android:id="@+id/rdbProblemaSoftware"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/selector_chip_opcion"
+                    android:button="@null"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="Software"
+                    android:textColor="@color/texto_chip_opcion"
+                    android:textSize="12sp"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/lytGrupoDescripcionFalla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lytEncabezadoDescripcionFalla"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaDescripcionFalla"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Descripción de la falla"
+                        android:textColor="#34495C"
+                        android:textSize="13.5sp"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtDescripcionFalla"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/borde_campo_formulario"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="top|start"
+                    android:hint="Describe la falla que presenta el equipo..."
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:lineSpacingExtra="4sp"
+                    android:padding="10dp"
+                    android:textColor="#465969"
+                    android:textColorHint="#A0AAB2"
+                    android:textSize="12.5sp"
+                    tools:text="Los equipos de la fila 3 no tienen conexión a internet desde esta mañana."/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vwDivisorPrioridad"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="9dp"
+                android:background="#E8ECEF"/>
+
+            <LinearLayout
+                android:id="@+id/lytPrioridadEstimada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/txtEtiquetaPrioridadEstimada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Prioridad estimada"
+                    android:textColor="#667784"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/txtPrioridadEstimada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/punto_estado"
+                    android:drawableTint="#E7A448"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center_vertical"
+                    android:text="Media"
+                    android:textColor="#BD7827"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtNotaPrioridad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Se calcula según la información ingresada"
+                android:textColor="#98A3AB"
+                android:textSize="11sp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/vwDivisorBarraAccionReporte"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5EAED"/>
+
+    <LinearLayout
+        android:id="@+id/lytBarraAccionReporte"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btnGenerarSolicitud"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/inter_bold"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:letterSpacing="0"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text="Generar solicitud"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:backgroundTint="#0C3155"
+            app:cornerRadius="9dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_flecha"
+            app:iconGravity="textEnd"
+            app:iconPadding="8dp"
+            app:iconSize="16dp"
+            app:iconTint="#FFFFFF"/>
+    </LinearLayout>
+</LinearLayout>

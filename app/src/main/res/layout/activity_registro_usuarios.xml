@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B2947"
+    android:orientation="vertical"
+    tools:context=".Vista.RegistroActivity">
+
+    <FrameLayout
+        android:id="@+id/lytContenedorRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/vwOrbitaSuperiorRegistro"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-154dp"
+            android:layout_marginEnd="-88dp"
+            android:background="@drawable/orbita_acceso"/>
+
+        <View
+            android:id="@+id/vwOrbitaLateralRegistro"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="-98dp"
+            android:background="@drawable/orbita_acceso"/>
+
+        <LinearLayout
+            android:id="@+id/lytMarcaRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgLogoRegistro"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:contentDescription="Capsule Tech"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_capsule_blanco"/>
+
+            <LinearLayout
+                android:id="@+id/lytTextosMarcaRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNombreMarcaRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Capsule Tech"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16.5sp"/>
+
+                <TextView
+                    android:id="@+id/txtDescriptorMarcaRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:letterSpacing="0.04"
+                    android:text="Servicios tecnológicos"
+                    android:textAllCaps="true"
+                    android:textColor="#A9BED0"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scvTarjetaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="74dp"
+            android:background="@drawable/fondo_hoja_superior_28"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/lytTarjetaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="18dp"
+                android:paddingEnd="25dp"
+                android:paddingStart="25dp"
+                android:paddingTop="24dp">
+
+                <TextView
+                    android:id="@+id/txtEtiquetaNuevaCuenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_extrabold"
+                    android:letterSpacing="0.083"
+                    android:text="NUEVA CUENTA"
+                    android:textColor="#27885B"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/txtTituloRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:letterSpacing="-0.032"
+                    android:text="Crea tu cuenta"
+                    android:textColor="#112A43"
+                    android:textSize="25sp"/>
+
+                <TextView
+                    android:id="@+id/txtDescripcionRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="Completa tus datos institucionales para comenzar."
+                    android:textColor="#74828E"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/txtEtiquetaNombreCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Nombre completo"
+                    android:textColor="#34495C"
+                    android:textSize="12.5sp"/>
+
+                <LinearLayout
+                    android:id="@+id/lytCampoNombreCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="5dp"
+                    android:addStatesFromChildren="true"
+                    android:background="@drawable/borde_campo_acceso"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoNombreCompleto"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_persona"
+                        android:tint="#82919D"/>
+
+                    <EditText
+                        android:id="@+id/edtNombreCompleto"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="9dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_bold"
+                        android:hint="Nombre y apellidos"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName|textCapWords"
+                        android:maxLines="1"
+                        android:textColor="#263A4D"
+                        android:textColorHint="#A0AAB2"
+                        android:textSize="14.5sp"
+                        tools:text="Mariana García"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtEtiquetaMatriculaRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Matrícula o clave"
+                    android:textColor="#34495C"
+                    android:textSize="12.5sp"/>
+
+                <LinearLayout
+                    android:id="@+id/lytCampoMatriculaRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="5dp"
+                    android:addStatesFromChildren="true"
+                    android:background="@drawable/borde_campo_acceso"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoMatriculaRegistro"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_solicitudes"
+                        android:tint="#82919D"/>
+
+                    <EditText
+                        android:id="@+id/edtMatriculaRegistro"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="9dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_bold"
+                        android:hint="Ej. 2024-01842"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="#263A4D"
+                        android:textColorHint="#A0AAB2"
+                        android:textSize="14.5sp"
+                        tools:text="2024-01842"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtEtiquetaCorreoInstitucional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Correo institucional"
+                    android:textColor="#34495C"
+                    android:textSize="12.5sp"/>
+
+                <LinearLayout
+                    android:id="@+id/lytCampoCorreoInstitucional"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="5dp"
+                    android:addStatesFromChildren="true"
+                    android:background="@drawable/borde_campo_acceso"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoCorreoInstitucional"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_correo"
+                        android:tint="#82919D"/>
+
+                    <EditText
+                        android:id="@+id/edtCorreoInstitucional"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="9dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_bold"
+                        android:hint="usuario@institucion.edu"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="#263A4D"
+                        android:textColorHint="#A0AAB2"
+                        android:textSize="14.5sp"
+                        tools:text="mariana.garcia@institucion.edu"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtEtiquetaContrasenaRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Contraseña"
+                    android:textColor="#34495C"
+                    android:textSize="12.5sp"/>
+
+                <LinearLayout
+                    android:id="@+id/lytCampoContrasenaRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="5dp"
+                    android:addStatesFromChildren="true"
+                    android:background="@drawable/borde_campo_acceso"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoContrasenaRegistro"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_candado"
+                        android:tint="#82919D"/>
+
+                    <EditText
+                        android:id="@+id/edtContrasenaRegistro"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="9dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_bold"
+                        android:hint="Mínimo 8 caracteres"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="#263A4D"
+                        android:textColorHint="#A0AAB2"
+                        android:textSize="14.5sp"
+                        tools:text="institucional"/>
+
+                    <ImageButton
+                        android:id="@+id/btnMostrarContrasenaRegistro"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Mostrar contraseña"
+                        android:padding="5.5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_ojo"
+                        android:tint="#84919D"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytTerminosRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/chkTerminosRegistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#2D9B68"
+                        android:checked="true"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:padding="0dp"/>
+
+                    <TextView
+                        android:id="@+id/txtTerminosRegistro"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:lineSpacingMultiplier="1.2"
+                        android:text="Acepto los Términos de uso y el aviso de privacidad."
+                        android:textColor="#687887"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCrearMiCuenta"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:insetBottom="0dp"
+                    android:insetTop="0dp"
+                    android:letterSpacing="0"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:text="Crear mi cuenta"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14.5sp"
+                    app:backgroundTint="#0C3155"
+                    app:cornerRadius="10dp"
+                    app:elevation="0dp"
+                    app:icon="@drawable/ic_flecha"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="8dp"
+                    app:iconSize="17dp"
+                    app:iconTint="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/txtIrAIniciarSesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="¿Ya tienes una cuenta? Inicia sesión"
+                    android:textColor="#7E8C97"
+                    android:textSize="11.5sp"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
