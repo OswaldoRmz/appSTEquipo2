@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FA"
+    android:orientation="vertical"
+    tools:context=".Vista.PanelAdminActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scvPanelAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/lytContenidoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/lytEncabezadoPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="14dp"
+                android:paddingEnd="17dp"
+                android:paddingStart="17dp"
+                android:paddingTop="12dp">
+
+                <LinearLayout
+                    android:id="@+id/lytTitulosPanel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSobretituloPanel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_extrabold"
+                        android:letterSpacing="0.073"
+                        android:text="ADMINISTRACIÓN"
+                        android:textColor="#27875A"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/txtTituloPanel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:letterSpacing="-0.025"
+                        android:text="Centro de control"
+                        android:textColor="#0B2947"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/lytNotificaciones"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+
+                    <ImageButton
+                        android:id="@+id/btnNotificaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/borde_gris_9"
+                        android:contentDescription="Notificaciones"
+                        android:padding="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_campana"
+                        android:tint="#53697A"/>
+
+                    <View
+                        android:id="@+id/vwPuntoNotificacion"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/punto_notificacion"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytResumenPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
+
+                <LinearLayout
+                    android:id="@+id/lytTarjetaDevolucionesRetrasadas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="9dp"
+                    android:background="@drawable/borde_tarjeta_11"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:minHeight="93dp"
+                    android:orientation="horizontal"
+                    android:padding="11dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoDevolucionesRetrasadas"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/fondo_redondeado_8"
+                        android:backgroundTint="#FBECEE"
+                        android:contentDescription="@null"
+                        android:padding="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_reloj"
+                        android:tint="#C45256"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytTextosDevolucionesRetrasadas"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtCantidadDevolucionesRetrasadas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="4"
+                            android:textColor="#18324A"
+                            android:textSize="22sp"/>
+
+                        <TextView
+                            android:id="@+id/txtEtiquetaDevolucionesRetrasadas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:lineSpacingMultiplier="1.1"
+                            android:text="Devoluciones\nretrasadas"
+                            android:textColor="#778590"
+                            android:textSize="11.5sp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgFlechaDevolucionesRetrasadas"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron"
+                        android:tint="#9AA5AD"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytTarjetaTicketsPorAtender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/borde_tarjeta_11"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:minHeight="93dp"
+                    android:orientation="horizontal"
+                    android:padding="11dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoTicketsPorAtender"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/fondo_redondeado_8"
+                        android:backgroundTint="#E8F5EE"
+                        android:contentDescription="@null"
+                        android:padding="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_soporte"
+                        android:tint="#27885A"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytTextosTicketsPorAtender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtCantidadTicketsPorAtender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="12"
+                            android:textColor="#18324A"
+                            android:textSize="22sp"/>
+
+                        <TextView
+                            android:id="@+id/txtEtiquetaTicketsPorAtender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:lineSpacingMultiplier="1.1"
+                            android:text="Tickets\npor atender"
+                            android:textColor="#778590"
+                            android:textSize="11.5sp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgFlechaTicketsPorAtender"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron"
+                        android:tint="#9AA5AD"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytEncabezadoAlertas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="9dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lytTitulosAlertas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTituloAlertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Alertas prioritarias"
+                        android:textColor="#142C43"
+                        android:textSize="14.5sp"/>
+
+                    <TextView
+                        android:id="@+id/txtSubtituloAlertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Requieren acción inmediata"
+                        android:textColor="#929DA5"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnVerTodasAlertas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_semibold"
+                    android:padding="4dp"
+                    android:text="Ver todas"
+                    android:textColor="#2A8C5F"
+                    android:textSize="12.5sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytAlertaDevolucionVencida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginEnd="17dp"
+                android:background="@drawable/fondo_alerta_vencida"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="11dp">
+
+                <ImageView
+                    android:id="@+id/imgIconoAlertaVencida"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/fondo_redondeado_8"
+                    android:backgroundTint="#FAE9EB"
+                    android:contentDescription="@null"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_reloj"
+                    android:tint="#C65358"/>
+
+                <LinearLayout
+                    android:id="@+id/lytTextosAlertaVencida"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaAlertaVencida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_extrabold"
+                        android:text="DEVOLUCIÓN VENCIDA · HACE 2 DÍAS"
+                        android:textColor="#C1585C"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/txtEquipoAlertaVencida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Laptop HP ProBook 440"
+                        android:textColor="#303F4D"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/txtAsignacionAlertaVencida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Asignado a Carlos Méndez · PR-0312"
+                        android:textColor="#818D96"
+                        android:textSize="11.5sp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgFlechaAlertaVencida"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="9dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_chevron"
+                    android:tint="#A1A9AF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytEncabezadoTickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="9dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lytTitulosTickets"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTituloTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Tickets entrantes"
+                        android:textColor="#142C43"
+                        android:textSize="14.5sp"/>
+
+                    <TextView
+                        android:id="@+id/txtSubtituloTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Últimas solicitudes registradas"
+                        android:textColor="#929DA5"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnVerTodosTickets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_semibold"
+                    android:padding="4dp"
+                    android:text="Ver todas"
+                    android:textColor="#2A8C5F"
+                    android:textSize="12.5sp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTicketsEntrantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:paddingEnd="17dp"
+                android:paddingStart="17dp"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_ticket_panel"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/vwDivisorNavegacionAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E9ED"/>
+
+    <LinearLayout
+        android:id="@+id/lytNavegacionInferiorAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/lytNavPanelAdmin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavPanelAdmin"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_casa"
+                android:tint="#0B7950"/>
+
+            <TextView
+                android:id="@+id/txtNavPanelAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Panel"
+                android:textColor="#0B7950"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavInventarioAdmin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavInventarioAdmin"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_caja"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavInventarioAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Inventario"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavSolicitudesAdmin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavSolicitudesAdmin"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_solicitudes"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavSolicitudesAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Solicitudes"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavPerfilAdmin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavPerfilAdmin"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_usuario"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavPerfilAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Perfil"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

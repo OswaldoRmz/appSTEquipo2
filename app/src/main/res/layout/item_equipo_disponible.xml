@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lytTarjetaEquipo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="9dp"
+    android:background="@drawable/borde_tarjeta_12"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="9dp">
+
+    <ImageView
+        android:id="@+id/imgEquipoDisponible"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:background="@drawable/fondo_redondeado_9"
+        android:backgroundTint="#EDF3F7"
+        android:contentDescription="@null"
+        android:padding="13dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_monitor"
+        android:tint="#245478"/>
+
+    <LinearLayout
+        android:id="@+id/lytTextosEquipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNombreEquipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_bold"
+            android:maxLines="1"
+            android:textColor="#24384B"
+            android:textSize="13.5sp"
+            tools:text="Monitor Easer"/>
+
+        <TextView
+            android:id="@+id/txtCodigoEquipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:letterSpacing="0.026"
+            android:maxLines="1"
+            android:textColor="#98A2AA"
+            android:textSize="11.5sp"
+            tools:text="LAB · EQ-024"/>
+
+        <TextView
+            android:id="@+id/txtDisponibilidadEquipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:drawablePadding="4dp"
+            android:drawableStart="@drawable/punto_estado"
+            android:drawableTint="#33A66F"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center_vertical"
+            android:textColor="#27885A"
+            android:textSize="12sp"
+            tools:text="5 disponibles"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgFlechaEquipo"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="11dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_chevron"
+        android:tint="#9AA4AD"/>
+</LinearLayout>

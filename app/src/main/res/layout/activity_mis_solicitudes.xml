@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFCFD"
+    android:orientation="vertical"
+    tools:context=".Vista.MisSolicitudesActivity">
+
+    <LinearLayout
+        android:id="@+id/lytEncabezadoSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingEnd="17dp"
+        android:paddingStart="17dp"
+        android:paddingTop="14dp">
+
+        <LinearLayout
+            android:id="@+id/lytTitulosSolicitudes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSobretituloSolicitudes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:letterSpacing="0.073"
+                android:text="SEGUIMIENTO"
+                android:textColor="#27875A"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/txtTituloSolicitudes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:letterSpacing="-0.025"
+                android:text="Mis solicitudes"
+                android:textColor="#0B2947"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnBuscarSolicitud"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/borde_gris_9"
+            android:contentDescription="Buscar solicitud"
+            android:padding="7.5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_buscar"
+            android:tint="#52687A"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytPestanasSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="17dp"
+        android:paddingStart="17dp">
+
+        <LinearLayout
+            android:id="@+id/lytPestanaActivas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lytTextoPestanaActivas"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPestanaActivas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Activas"
+                    android:textColor="#0B3154"
+                    android:textSize="12.5sp"/>
+
+                <TextView
+                    android:id="@+id/txtContadorActivas"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@drawable/fondo_circulo"
+                    android:backgroundTint="#E4F3EB"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="#247F56"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vwIndicadorActivas"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/fondo_redondeado_2"
+                android:backgroundTint="#2C9765"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytPestanaResueltas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lytTextoPestanaResueltas"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPestanaResueltas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Resueltas"
+                    android:textColor="#86939E"
+                    android:textSize="12.5sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vwIndicadorResueltas"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/fondo_redondeado_2"
+                android:backgroundTint="#2C9765"
+                android:visibility="invisible"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytPestanaTodas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lytTextoPestanaTodas"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPestanaTodas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Todas"
+                    android:textColor="#86939E"
+                    android:textSize="12.5sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vwIndicadorTodas"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/fondo_redondeado_2"
+                android:backgroundTint="#2C9765"
+                android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vwDivisorPestanasSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E4E9ED"/>
+
+    <FrameLayout
+        android:id="@+id/lytContenedorSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSolicitudes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="70dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_solicitud"/>
+
+        <ImageButton
+            android:id="@+id/btnNuevaSolicitud"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fondo_redondeado_13"
+            android:backgroundTint="#0D3154"
+            android:contentDescription="Nueva solicitud"
+            android:elevation="8dp"
+            android:padding="10.5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_mas"
+            android:tint="#FFFFFF"/>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/vwDivisorNavegacion"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E9ED"/>
+
+    <LinearLayout
+        android:id="@+id/lytNavegacionInferior"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/lytNavInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavInicio"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_casa"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Inicio"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavSolicitudes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavSolicitudes"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_solicitudes"
+                android:tint="#0B7950"/>
+
+            <TextView
+                android:id="@+id/txtNavSolicitudes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Solicitudes"
+                android:textColor="#0B7950"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavSoporte"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavSoporte"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_soporte"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavSoporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Soporte"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytNavPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgNavPerfil"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_usuario"
+                android:tint="#8B98A3"/>
+
+            <TextView
+                android:id="@+id/txtNavPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Perfil"
+                android:textColor="#8B98A3"
+                android:textSize="11.5sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
