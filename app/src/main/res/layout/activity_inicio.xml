@@ -1,475 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBFCFD"
-    android:orientation="vertical"
-    tools:context=".Vista.InicioActivity">
+    android:background="#F8FAFC">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scvInicio"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/lytContenidoInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="12dp">
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
 
+            <!-- Saludo y Avatar con punto verde -->
             <LinearLayout
-                android:id="@+id/lytEncabezadoInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingBottom="16dp"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp"
-                android:paddingTop="13dp">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txtSaludoUsuario"
+                    android:id="@+id/tvGreeting"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/inter_regular"
-                    android:letterSpacing="-0.025"
                     android:text="Hola, Nombre"
-                    android:textColor="#0B2947"
-                    android:textSize="20sp"/>
+                    android:textColor="#0F172A"
+                    android:textSize="22sp" />
 
                 <FrameLayout
-                    android:id="@+id/lytAvatarUsuario"
-                    android:layout_width="37dp"
-                    android:layout_height="37dp"
-                    android:clickable="true"
-                    android:contentDescription="Perfil"
-                    android:focusable="true">
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
 
-                    <TextView
-                        android:id="@+id/txtInicialAvatar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/fondo_circulo"
-                        android:backgroundTint="#DFF1E8"
-                        android:fontFamily="@font/inter_bold"
-                        android:gravity="center"
-                        android:text="N"
-                        android:textColor="#174D38"
-                        android:textSize="13.5sp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        app:cardBackgroundColor="#DCFCE7"
+                        app:cardCornerRadius="21dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
 
-                    <View
-                        android:id="@+id/vwIndicadorEnLinea"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
+                        <TextView
+                            android:id="@+id/tvAvatarInitial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="N"
+                            android:textColor="#0D2847"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
                         android:layout_gravity="bottom|end"
-                        android:layout_marginBottom="1dp"
-                        android:background="@drawable/punto_en_linea"/>
+                        app:cardBackgroundColor="#188653"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFFFFF"
+                        app:strokeWidth="2dp" />
                 </FrameLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/lytBusquedaEquipo"
+            <!-- Barra de búsqueda -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginEnd="17dp"
-                android:addStatesFromChildren="true"
-                android:background="@drawable/borde_busqueda"
-                android:elevation="1dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingEnd="11dp"
-                android:paddingStart="11dp">
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
 
-                <ImageView
-                    android:id="@+id/imgIconoBusquedaEquipo"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_buscar"
-                    android:tint="#8795A0"/>
-
-                <EditText
-                    android:id="@+id/edtBuscarEquipo"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="9dp"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:fontFamily="@font/inter_regular"
-                    android:hint="Buscar equipo o consumible..."
-                    android:imeOptions="actionSearch"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColor="#2D4153"
-                    android:textColorHint="#97A2AB"
-                    android:textSize="13.5sp"/>
-            </LinearLayout>
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
 
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="Buscar"
+                        android:src="@drawable/ic_search"
+                        app:tint="#94A3B8" />
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar equipo o consumible..."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="#0F172A"
+                        android:textColorHint="#94A3B8"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Título Categorías -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Categorías"
+                android:textColor="#0F172A"
+                android:textSize="16sp" />
+
+            <!-- Fila de 4 Categorías -->
             <LinearLayout
-                android:id="@+id/lytEncabezadoCategorias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="11dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtTituloCategorias"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_regular"
-                    android:text="Categorías"
-                    android:textColor="#142C43"
-                    android:textSize="14.5sp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lytCategorias"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp">
+                android:weightSum="4">
 
+                <!-- 1. Todos -->
                 <LinearLayout
-                    android:id="@+id/lytCategoriaTodos"
+                    android:id="@+id/catTodos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
+                    android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imgCategoriaTodos"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCatTodos"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/fondo_redondeado_10"
-                        android:backgroundTint="#0C3155"
-                        android:contentDescription="@null"
-                        android:elevation="3dp"
-                        android:paddingBottom="13dp"
-                        android:paddingTop="13dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_laptop"
-                        android:tint="#FFFFFF"/>
+                        android:layout_height="56dp"
+                        app:cardBackgroundColor="#0D2847"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#0D2847"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/iconCatTodos"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_laptop"
+                            app:tint="#FFFFFF" />
+                    </com.google.android.material.card.MaterialCardView>
 
                     <TextView
-                        android:id="@+id/txtCategoriaTodos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/inter_bold"
-                        android:gravity="center"
-                        android:text="Todos"
-                        android:textColor="#1D7E51"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lytCategoriaEquipos"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imgCategoriaEquipos"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/borde_categoria"
-                        android:contentDescription="@null"
-                        android:paddingBottom="13dp"
-                        android:paddingTop="13dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_monitor"
-                        android:tint="#536C7F"/>
-
-                    <TextView
-                        android:id="@+id/txtCategoriaEquipos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:text="Equipos"
-                        android:textColor="#697784"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lytCategoriaConsumibles"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imgCategoriaConsumibles"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/borde_categoria"
-                        android:contentDescription="@null"
-                        android:paddingBottom="13dp"
-                        android:paddingTop="13dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_consumibles"
-                        android:tint="#536C7F"/>
-
-                    <TextView
-                        android:id="@+id/txtCategoriaConsumibles"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:text="Consumibles"
-                        android:textColor="#697784"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lytCategoriaCables"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imgCategoriaCables"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/borde_categoria"
-                        android:contentDescription="@null"
-                        android:paddingBottom="13dp"
-                        android:paddingTop="13dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_cable"
-                        android:tint="#536C7F"/>
-
-                    <TextView
-                        android:id="@+id/txtCategoriaCables"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:text="Cables"
-                        android:textColor="#697784"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lytEncabezadoDisponibles"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="11dp"
-                android:gravity="bottom"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/lytTitulosDisponibles"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtTituloDisponibles"
+                        android:id="@+id/lblCatTodos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Disponibles ahora"
-                        android:textColor="#142C43"
-                        android:textSize="14.5sp"/>
+                        android:layout_marginTop="6dp"
+                        android:text="Todos"
+                        android:textColor="#188653"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/btnVerTotalEquipos"
-                    android:layout_width="wrap_content"
+                <!-- 2. Equipos -->
+                <LinearLayout
+                    android:id="@+id/catEquipos"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/inter_semibold"
-                    android:padding="4dp"
-                    android:text="12 equipos"
-                    android:textColor="#788691"
-                    android:textSize="12.5sp"/>
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCatEquipos"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/iconCatEquipos"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_desktop_windows"
+                            app:tint="#475569" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/lblCatEquipos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Equipos"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 3. Consumibles -->
+                <LinearLayout
+                    android:id="@+id/catConsumibles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCatConsumibles"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/iconCatConsumibles"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_extension"
+                            app:tint="#475569" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/lblCatConsumibles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Consumibles"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 4. Cables -->
+                <LinearLayout
+                    android:id="@+id/catCables"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCatCables"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/iconCatCables"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_swap_horiz"
+                            app:tint="#475569" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/lblCatCables"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Cables"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvEquiposDisponibles"
+            <!-- Encabezado Disponibles ahora -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_equipo_disponible"/>
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Disponibles ahora"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvTotalCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 equipos"
+                    android:textColor="#64748B"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Listado de equipos -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <!-- Línea divisoria superior del menú inferior -->
     <View
-        android:id="@+id/vwDivisorNavegacion"
-        android:layout_width="match_parent"
+        android:id="@+id/dividerBottom"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#E5E9ED"/>
+        android:background="#E2E8F0"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/lytNavegacionInferior"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
+    <!-- Barra de navegación inferior -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="horizontal">
+        app:elevation="0dp"
+        app:itemActiveIndicatorStyle="@null"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav" />
 
-        <LinearLayout
-            android:id="@+id/lytNavInicio"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavInicio"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_casa"
-                android:tint="#0B7950"/>
-
-            <TextView
-                android:id="@+id/txtNavInicio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="Inicio"
-                android:textColor="#0B7950"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavSolicitudes"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavSolicitudes"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_solicitudes"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavSolicitudes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Solicitudes"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavSoporte"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            :background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavSoporte"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_soporte"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavSoporte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Soporte"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavPerfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavPerfil"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_usuario"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavPerfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Perfil"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

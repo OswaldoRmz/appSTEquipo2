@@ -1,70 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lytTicketPanel"
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="7dp"
-    android:background="@drawable/borde_tarjeta_9"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?attr/selectableItemBackground"
-    android:gravity="center_vertical"
-    android:minHeight="52dp"
-    android:orientation="horizontal"
-    android:paddingBottom="8dp"
-    android:paddingEnd="10dp"
-    android:paddingStart="10dp"
-    android:paddingTop="8dp">
-
-    <TextView
-        android:id="@+id/txtPrioridadTicketPanel"
-        android:layout_width="38dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fondo_redondeado_8"
-        android:backgroundTint="#FBECEE"
-        android:fontFamily="@font/inter_extrabold"
-        android:gravity="center"
-        android:paddingBottom="3dp"
-        android:paddingTop="3dp"
-        android:textColor="#BD5559"
-        android:textSize="11sp"
-        tools:text="Alta"/>
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#E2E8F0"
+    app:strokeWidth="1dp">
 
     <LinearLayout
-        android:id="@+id/lytTextosTicketPanel"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="14dp">
 
-        <TextView
-            android:id="@+id/txtTituloTicketPanel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="#354858"
-            android:textSize="12sp"
-            tools:text="Proyector no enciende"/>
+        <!-- Etiqueta de prioridad -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/badgePrioridad"
+            android:layout_width="58dp"
+            android:layout_height="28dp"
+            app:cardBackgroundColor="#FEE2E2"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
 
-        <TextView
-            android:id="@+id/txtDetalleTicketPanel"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tvPrioridadTicket"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Alta"
+                android:textColor="#DC2626"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Información del ticket -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="#929CA4"
-            android:textSize="11sp"
-            tools:text="Aula B-204 · Hace 8 min"/>
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTituloTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proyector no enciende"
+                android:textColor="#0F172A"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Aula B-204 · Hace 8 min"
+                android:textColor="#64748B"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Flecha derecha -->
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:contentDescription="Ver ticket"
+            android:src="@drawable/ic_derecha"
+            app:tint="#94A3B8" />
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imgFlechaTicketPanel"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginStart="9dp"
-        android:contentDescription="@null"
-        android:src="@drawable/ic_chevron"
-        android:tint="#9BA5AD"/>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

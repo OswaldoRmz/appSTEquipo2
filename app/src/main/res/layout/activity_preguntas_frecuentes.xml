@@ -2,516 +2,266 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F9FA"
-    android:orientation="vertical"
-    tools:context=".Vista.PreguntasFrecuentesActivity">
+    android:background="#F5F7FA"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/lytBarraSuperiorAyuda"
+    <!-- BARRA SUPERIOR -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="49dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingEnd="12dp"
-        android:paddingStart="12dp">
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:paddingHorizontal="12dp">
 
         <ImageButton
-            android:id="@+id/btnRegresarAyuda"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:id="@+id/btnRegresarFaq"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Regresar"
-            android:padding="6.5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_atras"
-            android:tint="#405365"/>
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#16263E" />
 
         <TextView
-            android:id="@+id/txtTituloAyuda"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:fontFamily="@font/inter_regular"
-            android:gravity="center"
-            android:maxLines="1"
+            android:layout_centerInParent="true"
             android:text="Preguntas frecuentes"
-            android:textColor="#142D45"
-            android:textSize="15.5sp"/>
+            android:textColor="#16263E"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/btnContactarSoporteBarra"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:id="@+id/btnSoporteDirecto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Contactar soporte"
-            android:padding="7.5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_audifonos"
-            android:tint="#405365"/>
-    </LinearLayout>
+            android:src="@drawable/ic_headset"
+            app:tint="#4A5568" />
+    </RelativeLayout>
 
     <View
-        android:id="@+id/vwDivisorBarraSuperiorAyuda"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E8ECEF"/>
+        android:background="#EAEFF4" />
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/scvPreguntasFrecuentes"
+    <!-- CONTENIDO PRINCIPAL -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="18dp">
 
+        <!-- Banner Centro de Ayuda -->
         <LinearLayout
-            android:id="@+id/lytContenidoPreguntas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="18dp">
+            android:background="@drawable/bg_help_banner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:id="@+id/lytIntroAyuda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/fondo_intro_ayuda"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp">
+            <FrameLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_white_icon_14">
 
                 <ImageView
-                    android:id="@+id/imgIconoAyuda"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/fondo_redondeado_11"
-                    android:contentDescription="@null"
-                    android:elevation="2dp"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_soporte"
-                    android:tint="#237C55"/>
-
-                <LinearLayout
-                    android:id="@+id/lytTextosIntroAyuda"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtEtiquetaCentroAyuda"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_extrabold"
-                        android:letterSpacing="0.073"
-                        android:text="CENTRO DE AYUDA"
-                        android:textColor="#2C8B61"
-                        android:textSize="11sp"/>
-
-                    <TextView
-                        android:id="@+id/txtTituloIntroAyuda"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="¿En qué podemos ayudarte?"
-                        android:textColor="#173B2E"
-                        android:textSize="14sp"/>
-
-                    <TextView
-                        android:id="@+id/txtDescripcionIntroAyuda"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:lineSpacingMultiplier="1.16"
-                        android:text="Encuentra respuestas rápidas a las dudas más comunes."
-                        android:textColor="#678076"
-                        android:textSize="11.5sp"/>
-                </LinearLayout>
-            </LinearLayout>
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_headset"
+                    app:tint="#238656" />
+            </FrameLayout>
 
             <LinearLayout
-                android:id="@+id/lytBusquedaPregunta"
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:addStatesFromChildren="true"
-                android:background="@drawable/borde_busqueda"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingEnd="12dp"
-                android:paddingStart="12dp">
-
-                <ImageView
-                    android:id="@+id/imgIconoBusquedaPregunta"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_buscar"
-                    android:tint="#8996A0"/>
-
-                <EditText
-                    android:id="@+id/edtBuscarPregunta"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:fontFamily="@font/inter_regular"
-                    android:hint="Buscar una pregunta..."
-                    android:imeOptions="actionSearch"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColor="#34495B"
-                    android:textColorHint="#97A2AB"
-                    android:textSize="12.5sp"/>
-            </LinearLayout>
-
-            <HorizontalScrollView
-                android:id="@+id/hsvCategoriasPreguntas"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingBottom="3dp"
-                android:paddingEnd="16dp"
-                android:paddingStart="16dp"
-                android:paddingTop="12dp"
-                android:scrollbars="none">
-
-                <RadioGroup
-                    android:id="@+id/rdgCategoriasPreguntas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkedButton="@+id/rdbCategoriaTodas"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rdbCategoriaTodas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="26dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/selector_chip_filtro"
-                        android:button="@null"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:paddingEnd="10dp"
-                        android:paddingStart="10dp"
-                        android:text="Todas"
-                        android:textColor="@color/texto_chip_filtro"
-                        android:textSize="11.5sp"/>
-
-                    <RadioButton
-                        android:id="@+id/rdbCategoriaPrestamos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="26dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/selector_chip_filtro"
-                        android:button="@null"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:paddingEnd="10dp"
-                        android:paddingStart="10dp"
-                        android:text="Préstamos"
-                        android:textColor="@color/texto_chip_filtro"
-                        android:textSize="11.5sp"/>
-
-                    <RadioButton
-                        android:id="@+id/rdbCategoriaMantenimiento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="26dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/selector_chip_filtro"
-                        android:button="@null"
-                        android:fontFamily="@font/inter_regular"
-                        android:gravity="center"
-                        android:paddingEnd="10dp"
-                        android:paddingStart="10dp"
-                        android:text="Mantenimiento"
-                        android:textColor="@color/texto_chip_filtro"
-                        android:textSize="11.5sp"/>
-                </RadioGroup>
-            </HorizontalScrollView>
-
-            <LinearLayout
-                android:id="@+id/lytEncabezadoPreguntas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="bottom"
-                android:orientation="horizontal"
-                android:paddingBottom="9dp"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp"
-                android:paddingTop="17dp">
-
-                <LinearLayout
-                    android:id="@+id/lytTitulosPreguntas"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtEtiquetaRespuestasRapidas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_extrabold"
-                        android:letterSpacing="0.059"
-                        android:text="RESPUESTAS RÁPIDAS"
-                        android:textColor="#2B8A5E"
-                        android:textSize="11sp"/>
-
-                    <TextView
-                        android:id="@+id/txtTituloLoMasConsultado"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Lo más consultado"
-                        android:textColor="#17334B"
-                        android:textSize="16sp"/>
-                </LinearLayout>
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtContadorPreguntas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_regular"
-                    android:text="6 preguntas"
-                    android:textColor="#8C98A2"
-                    android:textSize="11sp"/>
-            </LinearLayout>
+                    android:letterSpacing="0.08"
+                    android:text="CENTRO DE AYUDA"
+                    android:textColor="#238656"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPreguntasFrecuentes"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="¿En qué podemos ayudarte?"
+                    android:textColor="#16263E"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Encuentra respuestas rápidas a las dudas más comunes."
+                    android:textColor="#52606D"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Barra de búsqueda -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card_outline"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                app:tint="#9AA5B1" />
+
+            <EditText
+                android:id="@+id/etBuscarPregunta"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Buscar una pregunta..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#16263E"
+                android:textColorHint="#9AA5B1"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Chips de categoría -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFaq"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                android:paddingEnd="16dp"
-                android:paddingStart="16dp"
-                tools:itemCount="6"
-                tools:listitem="@layout/item_pregunta"/>
+                app:chipSpacingHorizontal="8dp"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFaqTodas"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:checked="true"
+                    android:text="Todas"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="#16263E"
+                    app:chipCornerRadius="20dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFaqPrestamos"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Préstamos"
+                    android:textColor="#52606D"
+                    android:textSize="13sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="#FFFFFF"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="#E4E7EB"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFaqMantenimiento"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Mantenimiento"
+                    android:textColor="#52606D"
+                    android:textSize="13sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="#FFFFFF"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="#E4E7EB"
+                    app:chipStrokeWidth="1dp" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <!-- Encabezado de sección: Respuestas rápidas / Lo más consultado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/lytContactoSoporte"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/borde_tarjeta_11"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="11dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imgIconoContactoSoporte"
-                    android:layout_width="34dp"
-                    android:layout_height="34dp"
-                    android:background="@drawable/fondo_redondeado_8"
-                    android:backgroundTint="#E8F5EE"
-                    android:contentDescription="@null"
-                    android:padding="8dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_audifonos"
-                    android:tint="#2A8059"/>
-
-                <LinearLayout
-                    android:id="@+id/lytTextosContactoSoporte"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="9dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtTituloContactoSoporte"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="¿No encontraste tu respuesta?"
-                        android:textColor="#34495B"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:id="@+id/txtDescripcionContactoSoporte"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Nuestro equipo puede ayudarte."
-                        android:textColor="#8B97A0"
-                        android:textSize="11sp"/>
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/btnContactarSoporte"
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="29dp"
-                    android:layout_marginStart="9dp"
-                    android:fontFamily="@font/inter_bold"
-                    android:insetBottom="0dp"
-                    android:insetTop="0dp"
-                    android:letterSpacing="0"
-                    android:minHeight="0dp"
-                    android:minWidth="0dp"
-                    android:paddingEnd="9dp"
-                    android:paddingStart="9dp"
-                    android:text="Contactar"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:backgroundTint="#0C3155"
-                    app:cornerRadius="8dp"
-                    app:elevation="0dp"/>
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:text="RESPUESTAS RÁPIDAS"
+                    android:textColor="#238656"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Lo más consultado"
+                    android:textColor="#16263E"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <View
-        android:id="@+id/vwDivisorNavegacion"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E5E9ED"/>
-
-    <LinearLayout
-        android:id="@+id/lytNavegacionInferior"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/lytNavInicio"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavInicio"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_casa"
-                android:tint="#8B98A3"/>
 
             <TextView
-                android:id="@+id/txtNavInicio"
+                android:id="@+id/tvContadorPreguntas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Inicio"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
+                android:text="6 preguntas"
+                android:textColor="#7B8794"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/lytNavSolicitudes"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        <!-- Lista de tarjetas desplegables -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPreguntasFrecuentes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:clipToPadding="false"
+            android:paddingBottom="20dp"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_faq" />
 
-            <ImageView
-                android:id="@+id/imgNavSolicitudes"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_solicitudes"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavSolicitudes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Solicitudes"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavSoporte"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavSoporte"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_soporte"
-                android:tint="#0B7950"/>
-
-            <TextView
-                android:id="@+id/txtNavSoporte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="Soporte"
-                android:textColor="#0B7950"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavPerfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavPerfil"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_usuario"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavPerfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Perfil"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

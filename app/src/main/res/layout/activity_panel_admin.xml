@@ -1,558 +1,446 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F9FA"
-    android:orientation="vertical"
-    tools:context=".Vista.PanelAdminActivity">
+    android:background="#F8FAFC">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scvPanelAdmin"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/divisorInferior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/lytContenidoPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:paddingHorizontal="20dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="20dp">
 
-            <LinearLayout
-                android:id="@+id/lytEncabezadoPanel"
+            <!-- Encabezado: Administración / Centro de control / Campana -->
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingBottom="14dp"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp"
-                android:paddingTop="12dp">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/lytTitulosPanel"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tvSubtituloAdmin"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:letterSpacing="0.08"
+                    android:text="ADMINISTRACIÓN"
+                    android:textColor="#188653"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/txtSobretituloPanel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_extrabold"
-                        android:letterSpacing="0.073"
-                        android:text="ADMINISTRACIÓN"
-                        android:textColor="#27875A"
-                        android:textSize="11sp"/>
+                <TextView
+                    android:id="@+id/tvTituloPanel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Centro de control"
+                    android:textColor="#0F172A"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSubtituloAdmin" />
 
-                    <TextView
-                        android:id="@+id/txtTituloPanel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:letterSpacing="-0.025"
-                        android:text="Centro de control"
-                        android:textColor="#0B2947"
-                        android:textSize="20sp"/>
-                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnNotificaciones"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTituloPanel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvSubtituloAdmin"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
 
-                <FrameLayout
-                    android:id="@+id/lytNotificaciones"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp">
-
-                    <ImageButton
-                        android:id="@+id/btnNotificaciones"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/borde_gris_9"
-                        android:contentDescription="Notificaciones"
-                        android:padding="8dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_campana"
-                        android:tint="#53697A"/>
+                        android:layout_height="match_parent">
 
-                    <View
-                        android:id="@+id/vwPuntoNotificacion"
-                        android:layout_width="6dp"
-                        android:layout_height="6dp"
-                        android:layout_gravity="top|end"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/punto_notificacion"/>
-                </FrameLayout>
-            </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Notificaciones"
+                            android:src="@drawable/ic_notificaciones"
+                            app:tint="#334155" />
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/puntoNotificacion"
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="11dp"
+                            app:cardBackgroundColor="#DC2626"
+                            app:cardCornerRadius="3.5dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Tarjetas KPI superiores (2 columnas) -->
             <LinearLayout
-                android:id="@+id/lytResumenPanel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingEnd="16dp"
-                android:paddingStart="16dp">
-
-                <LinearLayout
-                    android:id="@+id/lytTarjetaDevolucionesRetrasadas"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="9dp"
-                    android:background="@drawable/borde_tarjeta_11"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:gravity="center_vertical"
-                    android:minHeight="93dp"
-                    android:orientation="horizontal"
-                    android:padding="11dp">
-
-                    <ImageView
-                        android:id="@+id/imgIconoDevolucionesRetrasadas"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:background="@drawable/fondo_redondeado_8"
-                        android:backgroundTint="#FBECEE"
-                        android:contentDescription="@null"
-                        android:padding="8dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_reloj"
-                        android:tint="#C45256"/>
-
-                    <LinearLayout
-                        android:id="@+id/lytTextosDevolucionesRetrasadas"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtCantidadDevolucionesRetrasadas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_bold"
-                            android:text="4"
-                            android:textColor="#18324A"
-                            android:textSize="22sp"/>
-
-                        <TextView
-                            android:id="@+id/txtEtiquetaDevolucionesRetrasadas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/inter_regular"
-                            android:lineSpacingMultiplier="1.1"
-                            android:text="Devoluciones\nretrasadas"
-                            android:textColor="#778590"
-                            android:textSize="11.5sp"/>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/imgFlechaDevolucionesRetrasadas"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/ic_chevron"
-                        android:tint="#9AA5AD"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lytTarjetaTicketsPorAtender"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/borde_tarjeta_11"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:gravity="center_vertical"
-                    android:minHeight="93dp"
-                    android:orientation="horizontal"
-                    android:padding="11dp">
-
-                    <ImageView
-                        android:id="@+id/imgIconoTicketsPorAtender"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:background="@drawable/fondo_redondeado_8"
-                        android:backgroundTint="#E8F5EE"
-                        android:contentDescription="@null"
-                        android:padding="8dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_soporte"
-                        android:tint="#27885A"/>
-
-                    <LinearLayout
-                        android:id="@+id/lytTextosTicketsPorAtender"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtCantidadTicketsPorAtender"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_bold"
-                            android:text="12"
-                            android:textColor="#18324A"
-                            android:textSize="22sp"/>
-
-                        <TextView
-                            android:id="@+id/txtEtiquetaTicketsPorAtender"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/inter_regular"
-                            android:lineSpacingMultiplier="1.1"
-                            android:text="Tickets\npor atender"
-                            android:textColor="#778590"
-                            android:textSize="11.5sp"/>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/imgFlechaTicketsPorAtender"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/ic_chevron"
-                        android:tint="#9AA5AD"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lytEncabezadoAlertas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="9dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- KPI 1: Devoluciones retrasadas -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardDevoluciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardBackgroundColor="#FEE2E2"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="Reloj"
+                                android:src="@drawable/ic_reloj"
+                                app:tint="#DC2626" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvCantidadRetrasadas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textColor="#0F172A"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:lineSpacingExtra="1dp"
+                                android:text="Devoluciones retrasadas"
+                                android:textColor="#64748B"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="Ver devoluciones"
+                            android:src="@drawable/ic_derecha"
+                            app:tint="#94A3B8" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KPI 2: Tickets por atender -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTicketsAtender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardBackgroundColor="#DCFCE7"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="Soporte"
+                                android:src="@drawable/ic_soporte"
+                                app:tint="#188653" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvCantidadTickets"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textColor="#0F172A"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:lineSpacingExtra="1dp"
+                                android:text="Tickets por atender"
+                                android:textColor="#64748B"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="Ver tickets"
+                            android:src="@drawable/ic_derecha"
+                            app:tint="#94A3B8" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Encabezado: Alertas prioritarias -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/lytTitulosAlertas"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtTituloAlertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
                         android:text="Alertas prioritarias"
-                        android:textColor="#142C43"
-                        android:textSize="14.5sp"/>
+                        android:textColor="#0F172A"
+                        android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/txtSubtituloAlertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/inter_regular"
+                        android:layout_marginTop="2dp"
                         android:text="Requieren acción inmediata"
-                        android:textColor="#929DA5"
-                        android:textSize="11sp"/>
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/btnVerTodasAlertas"
+                    android:id="@+id/tvVerTodasAlertas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/inter_semibold"
-                    android:padding="4dp"
                     android:text="Ver todas"
-                    android:textColor="#2A8C5F"
-                    android:textSize="12.5sp"/>
+                    android:textColor="#188653"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/lytAlertaDevolucionVencida"
+            <!-- Tarjeta destacada de Alerta prioritaria -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAlertaPrioritaria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginEnd="17dp"
-                android:background="@drawable/fondo_alerta_vencida"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="11dp">
-
-                <ImageView
-                    android:id="@+id/imgIconoAlertaVencida"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/fondo_redondeado_8"
-                    android:backgroundTint="#FAE9EB"
-                    android:contentDescription="@null"
-                    android:padding="8dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_reloj"
-                    android:tint="#C65358"/>
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#FEF2F2"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#FECACA"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
-                    android:id="@+id/lytTextosAlertaVencida"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="9dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
 
-                    <TextView
-                        android:id="@+id/txtEtiquetaAlertaVencida"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_extrabold"
-                        android:text="DEVOLUCIÓN VENCIDA · HACE 2 DÍAS"
-                        android:textColor="#C1585C"
-                        android:textSize="11sp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        app:cardBackgroundColor="#FEE2E2"
+                        app:cardCornerRadius="11dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
 
-                    <TextView
-                        android:id="@+id/txtEquipoAlertaVencida"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="Laptop HP ProBook 440"
-                        android:textColor="#303F4D"
-                        android:textSize="13sp"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Alerta vencida"
+                            android:src="@drawable/ic_reloj"
+                            app:tint="#DC2626" />
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/txtAsignacionAlertaVencida"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Asignado a Carlos Méndez · PR-0312"
-                        android:textColor="#818D96"
-                        android:textSize="11.5sp"/>
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvEtiquetaAlerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.04"
+                            android:text="DEVOLUCIÓN VENCIDA · HACE 2 DÍAS"
+                            android:textColor="#B91C1C"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvEquipoAlerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Laptop HP ProBook 440"
+                            android:textColor="#0F172A"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAsignadoAlerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Asignado a Carlos Méndez · PR-0312"
+                            android:textColor="#64748B"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="Detalle de alerta"
+                        android:src="@drawable/ic_derecha"
+                        app:tint="#94A3B8" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <ImageView
-                    android:id="@+id/imgFlechaAlertaVencida"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="9dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_chevron"
-                    android:tint="#A1A9AF"/>
-            </LinearLayout>
-
+            <!-- Encabezado: Tickets entrantes -->
             <LinearLayout
-                android:id="@+id/lytEncabezadoTickets"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="9dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/lytTitulosTickets"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtTituloTickets"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
                         android:text="Tickets entrantes"
-                        android:textColor="#142C43"
-                        android:textSize="14.5sp"/>
+                        android:textColor="#0F172A"
+                        android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/txtSubtituloTickets"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/inter_regular"
+                        android:layout_marginTop="2dp"
                         android:text="Últimas solicitudes registradas"
-                        android:textColor="#929DA5"
-                        android:textSize="11sp"/>
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/btnVerTodosTickets"
+                    android:id="@+id/tvVerTodosTickets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/inter_semibold"
-                    android:padding="4dp"
                     android:text="Ver todas"
-                    android:textColor="#2A8C5F"
-                    android:textSize="12.5sp"/>
+                    android:textColor="#188653"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- Listado de Tickets entrantes -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTicketsEntrantes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                android:paddingEnd="17dp"
-                android:paddingStart="17dp"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_ticket_panel"/>
+                android:nestedScrollingEnabled="false" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <!-- Línea divisoria superior del menú inferior -->
     <View
-        android:id="@+id/vwDivisorNavegacionAdmin"
-        android:layout_width="match_parent"
+        android:id="@+id/divisorInferior"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#E5E9ED"/>
+        android:background="#E2E8F0"
+        app:layout_constraintBottom_toTopOf="@id/navInferiorAdmin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/lytNavegacionInferiorAdmin"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
+    <!-- Barra de navegación inferior -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navInferiorAdmin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="horizontal">
+        app:elevation="0dp"
+        app:itemActiveIndicatorStyle="@null"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_panel_admin" />
 
-        <LinearLayout
-            android:id="@+id/lytNavPanelAdmin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavPanelAdmin"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_casa"
-                android:tint="#0B7950"/>
-
-            <TextView
-                android:id="@+id/txtNavPanelAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="Panel"
-                android:textColor="#0B7950"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavInventarioAdmin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavInventarioAdmin"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_caja"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavInventarioAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Inventario"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavSolicitudesAdmin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavSolicitudesAdmin"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_solicitudes"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavSolicitudesAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Solicitudes"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytNavPerfilAdmin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgNavPerfilAdmin"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_usuario"
-                android:tint="#8B98A3"/>
-
-            <TextView
-                android:id="@+id/txtNavPerfilAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Perfil"
-                android:textColor="#8B98A3"
-                android:textSize="11.5sp"/>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
