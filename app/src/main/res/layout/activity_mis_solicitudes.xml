@@ -1,250 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#FFFFFF">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-<!-- Encabezado: Etiqueta superior, Título y Botón de búsqueda -->
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/contenedorEncabezado"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:paddingHorizontal="20dp"
-    android:paddingTop="20dp"
-    android:paddingBottom="12dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <TextView
-        android:id="@+id/tvSubtituloSuperior"
-        android:layout_width="wrap_content"
+    <!-- Encabezado: Etiqueta superior, Título y Botón de búsqueda -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedorEncabezado"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:letterSpacing="0.08"
-        android:text="SEGUIMIENTO"
-        android:textColor="#188653"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvTituloPantalla"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Mis solicitudes"
-        android:textColor="#0F172A"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtituloSuperior" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnBuscar"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/tvTituloPantalla"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvSubtituloSuperior"
-        app:strokeColor="#E2E8F0"
-        app:strokeWidth="1dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:contentDescription="Buscar solicitud"
-            android:src="@drawable/ic_buscar"
-            app:tint="#475569" />
-    </com.google.android.material.card.MaterialCardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-<!-- Barra de pestañas: Activas (3), Resueltas, Todas -->
-<LinearLayout
-    android:id="@+id/contenedorPestanas"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingHorizontal="20dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/contenedorEncabezado">
-
-    <!-- Pestaña 1: Activas -->
-    <LinearLayout
-        android:id="@+id/tabActivas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:orientation="vertical">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvSubtituloSuperior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingVertical="10dp">
+            android:letterSpacing="0.08"
+            android:text="SEGUIMIENTO"
+            android:textColor="#188653"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvTabActivas"
+        <TextView
+            android:id="@+id/tvTituloPantalla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Mis solicitudes"
+            android:textColor="#0F172A"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtituloSuperior" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBuscar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTituloPantalla"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvSubtituloSuperior"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="Buscar solicitud"
+                android:src="@drawable/ic_buscar"
+                app:tint="#475569" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Barra de pestañas: Activas (3), Resueltas, Todas -->
+    <LinearLayout
+        android:id="@+id/contenedorPestanas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contenedorEncabezado">
+
+        <!-- Pestaña 1: Activas -->
+        <LinearLayout
+            android:id="@+id/tabActivas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activas"
-                android:textColor="#0F172A"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                app:cardBackgroundColor="#DCFCE7"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
 
                 <TextView
-                    android:id="@+id/tvContadorActivas"
+                    android:id="@+id/tvTabActivas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="7dp"
-                    android:paddingVertical="1dp"
-                    android:text="3"
-                    android:textColor="#188653"
-                    android:textSize="11sp"
+                    android:text="Activas"
+                    android:textColor="#0F172A"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
-            </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="#DCFCE7"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <TextView
+                        android:id="@+id/tvContadorActivas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="7dp"
+                        android:paddingVertical="1dp"
+                        android:text="3"
+                        android:textColor="#188653"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/indicadorActivas"
+                android:layout_width="match_parent"
+                android:layout_height="2.5dp"
+                android:background="#188653" />
         </LinearLayout>
 
-        <View
-            android:id="@+id/indicadorActivas"
-            android:layout_width="match_parent"
-            android:layout_height="2.5dp"
-            android:background="#188653" />
-    </LinearLayout>
-
-    <!-- Pestaña 2: Resueltas -->
-    <LinearLayout
-        android:id="@+id/tabResueltas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvTabResueltas"
+        <!-- Pestaña 2: Resueltas -->
+        <LinearLayout
+            android:id="@+id/tabResueltas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:text="Resueltas"
-            android:textColor="#64748B"
-            android:textSize="13sp" />
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/indicadorResueltas"
-            android:layout_width="match_parent"
-            android:layout_height="2.5dp"
-            android:background="@android:color/transparent" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvTabResueltas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Resueltas"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
 
-    <!-- Pestaña 3: Todas -->
-    <LinearLayout
-        android:id="@+id/tabTodas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            <View
+                android:id="@+id/indicadorResueltas"
+                android:layout_width="match_parent"
+                android:layout_height="2.5dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvTabTodas"
+        <!-- Pestaña 3: Todas -->
+        <LinearLayout
+            android:id="@+id/tabTodas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:text="Todas"
-            android:textColor="#64748B"
-            android:textSize="13sp" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/indicadorTodas"
-            android:layout_width="match_parent"
-            android:layout_height="2.5dp"
-            android:background="@android:color/transparent" />
+            <TextView
+                android:id="@+id/tvTabTodas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Todas"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/indicadorTodas"
+                android:layout_width="match_parent"
+                android:layout_height="2.5dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 
-<!-- Línea divisoria bajo pestañas -->
-<View
-    android:id="@+id/divisorSuperior"
-    android:layout_width="0dp"
-    android:layout_height="1dp"
-    android:background="#E2E8F0"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/contenedorPestanas" />
+    <!-- Línea divisoria bajo pestañas -->
+    <View
+        android:id="@+id/divisorSuperior"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E2E8F0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contenedorPestanas" />
 
-<!-- Listado de solicitudes -->
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rvSolicitudes"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:clipToPadding="false"
-    android:paddingHorizontal="20dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="88dp"
-    app:layout_constraintBottom_toTopOf="@id/divisorInferior"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/divisorSuperior" />
+    <!-- Listado de solicitudes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSolicitudes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="88dp"
+        app:layout_constraintBottom_toTopOf="@id/divisorInferior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divisorSuperior" />
 
-<!-- Botón flotante (+) inferior derecho -->
-<com.google.android.material.card.MaterialCardView
-    android:id="@+id/btnNuevaSolicitud"
-    android:layout_width="54dp"
-    android:layout_height="54dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginBottom="18dp"
-    app:cardBackgroundColor="#0D2847"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="4dp"
-    app:layout_constraintBottom_toTopOf="@id/divisorInferior"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:strokeWidth="0dp">
+    <!-- Botón flotante (+) inferior derecho -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnNuevaSolicitud"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="18dp"
+        app:cardBackgroundColor="#0D2847"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@id/divisorInferior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeWidth="0dp">
 
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="center"
-        android:contentDescription="Nueva solicitud"
-        android:src="@drawable/ic_agregar"
-        app:tint="#FFFFFF" />
-</com.google.android.material.card.MaterialCardView>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:contentDescription="Nueva solicitud"
+            android:src="@drawable/ic_agregar"
+            app:tint="#FFFFFF" />
+    </com.google.android.material.card.MaterialCardView>
 
-<!-- Divisor sobre menú inferior -->
-<View
-    android:id="@+id/divisorInferior"
-    android:layout_width="0dp"
-    android:layout_height="1dp"
-    android:background="#E2E8F0"
-    app:layout_constraintBottom_toTopOf="@id/navInferior"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    <!-- Divisor sobre menú inferior -->
+    <View
+        android:id="@+id/divisorInferior"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E2E8F0"
+        app:layout_constraintBottom_toTopOf="@id/navInferior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<!-- Barra de navegación inferior -->
-<com.google.android.material.bottomnavigation.BottomNavigationView
-    android:id="@+id/navInferior"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:background="#FFFFFF"
-    app:elevation="0dp"
-    app:itemActiveIndicatorStyle="@null"
-    app:labelVisibilityMode="labeled"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:menu="@menu/menu_navegacion_inferior" />
+    <!-- Menú de navegación inferior integrado -->
+    <LinearLayout
+        android:id="@+id/navInferior"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 1. Inicio -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavInicio"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Inicio"
+                android:src="@drawable/ic_inicio"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Inicio"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 2. Solicitudes (Activo) -->
+        <LinearLayout
+            android:id="@+id/navSolicitudes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavSolicitudes"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Solicitudes"
+                android:src="@drawable/ic_solicitudes"
+                app:tint="#188653" />
+
+            <TextView
+                android:id="@+id/lblNavSolicitudes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Solicitudes"
+                android:textColor="#188653"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 3. Soporte -->
+        <LinearLayout
+            android:id="@+id/navSoporte"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavSoporte"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Soporte"
+                android:src="@drawable/ic_soporte"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavSoporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Soporte"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 4. Perfil -->
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavPerfil"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Perfil"
+                android:src="@drawable/ic_perfil"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Perfil"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

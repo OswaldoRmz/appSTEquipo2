@@ -62,8 +62,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_weight="1"
                 android:contentDescription="Ilustración de servicios tecnológicos"
-                android:scaleType="fitCenter"
-                android:src="@drawable/img_hero_tech" />
+                android:scaleType="fitCenter"/>
         </LinearLayout>
     </FrameLayout>
 
