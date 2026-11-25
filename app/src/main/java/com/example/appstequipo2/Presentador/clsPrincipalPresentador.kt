@@ -5,7 +5,6 @@ class clsPrincipalPresentador(private val vista: MainActivity) {
     fun irALogin() {
         vista.abrirLogin()
     }
-
     // Botón "Crear una cuenta nueva"
     fun irARegistro() {
         vista.abrirRegistro()
