@@ -179,7 +179,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Botón flotante de ayuda (?) en la esquina inferior derecha -->
+        <!-- Botón flotante de ayuda en la esquina -->
         <FrameLayout
             android:id="@+id/btnAyuda"
             android:layout_width="38dp"
@@ -195,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text=""
+                android:background="@drawable/ic_pregunta"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold" />
