@@ -6,7 +6,7 @@
     android:background="#F5F7FA"
     android:orientation="vertical">
 
-    <!-- CABECERA BLANCA 12 -->
+    <!-- CABECERA BLANCA 123 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
