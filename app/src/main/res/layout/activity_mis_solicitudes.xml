@@ -200,7 +200,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divisorSuperior" />
 
-    <!-- Botón flotante (+) inferior derecho -->
+    <!-- Botón flotante (+) inferior derecho "+"-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnNuevaSolicitud"
         android:layout_width="54dp"
