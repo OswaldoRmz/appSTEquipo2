@@ -6,7 +6,7 @@
     android:background="#F5F7FA"
     android:orientation="vertical">
 
-    <!-- BARRA SUPERIOR -->
+    <!-- Barra superior -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
