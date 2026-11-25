@@ -71,7 +71,6 @@ class clsRegistroUsuarioPresentador(private val vista: RegistroUsuarioActivity) 
             }
         }
     }
-
     // Enlace "¿Ya tienes una cuenta? Inicia sesión"
     fun irALogin() {
         vista.abrirLogin("")
