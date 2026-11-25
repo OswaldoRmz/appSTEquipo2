@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0B2545">
@@ -96,22 +97,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:lineSpacingExtra="2dp"
-                android:text="Completa tus datos institucionales para comenzar."
+                android:text="Completa tus datos para comenzar."
                 android:textColor="#64748B"
                 android:textSize="14sp" />
 
-            <!-- CAMPO 1: Nombre completo -->
+            <!-- CAMPO 1: Nombres (usuario.nombres) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
-                android:text="Nombre completo"
+                android:text="Nombre(s)"
                 android:textColor="#1E293B"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etFullName"
+                android:id="@+id/etNombres"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="6dp"
@@ -119,51 +120,80 @@
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="12dp"
                 android:drawableTint="#94A3B8"
-                android:hint="Mariana García"
-                android:inputType="textPersonName"
+                android:hint="Mariana"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="50"
                 android:paddingHorizontal="14dp"
                 android:textColor="#1E293B"
                 android:textColorHint="#94A3B8"
                 android:textSize="14sp" />
 
-            <!-- CAMPO 2: Matrícula o clave -->
+            <!-- CAMPO 2: Apellidos (usuario.apellidos) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Matrícula o clave"
+                android:text="Apellidos"
                 android:textColor="#1E293B"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etStudentId"
+                android:id="@+id/etApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/bg_input_field"
-                android:drawableStart="@drawable/ic_description"
+                android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="12dp"
                 android:drawableTint="#94A3B8"
-                android:hint="2024-01842"
-                android:inputType="text"
+                android:hint="García López"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="100"
                 android:paddingHorizontal="14dp"
                 android:textColor="#1E293B"
                 android:textColorHint="#94A3B8"
                 android:textSize="14sp" />
 
-            <!-- CAMPO 3: Correo institucional -->
+            <!-- CAMPO 3: Teléfono (usuario.telefono) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Correo institucional"
+                android:text="Teléfono"
                 android:textColor="#1E293B"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="12dp"
+                android:drawableTint="#94A3B8"
+                android:hint="7711234567"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingHorizontal="14dp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:textSize="14sp" />
+
+            <!-- CAMPO 4: Correo (usuario.correo) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Correo electrónico"
+                android:textColor="#1E293B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="6dp"
@@ -171,14 +201,42 @@
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
                 android:drawableTint="#94A3B8"
-                android:hint="mariana.garcia@institucion.edu"
+                android:hint="mariana.garcia@correo.com"
                 android:inputType="textEmailAddress"
+                android:maxLength="100"
                 android:paddingHorizontal="14dp"
                 android:textColor="#1E293B"
                 android:textColorHint="#94A3B8"
                 android:textSize="14sp" />
 
-            <!-- CAMPO 4: Contraseña -->
+            <!-- CAMPO 5: Dirección (usuario.direccion, opcional) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dirección"
+                android:textColor="#1E293B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="12dp"
+                android:drawableTint="#94A3B8"
+                android:hint="Cuidad"
+                android:inputType="textPostalAddress|textCapSentences"
+                android:maxLength="150"
+                android:paddingHorizontal="14dp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:textSize="14sp" />
+
+            <!-- CAMPO 6: Contraseña (se guarda como usuario.password_hash) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,7 +271,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Checkbox Términos de uso -->
+            <!-- Checkbox Términos de uso (solo se valida en la app, no se guarda) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
