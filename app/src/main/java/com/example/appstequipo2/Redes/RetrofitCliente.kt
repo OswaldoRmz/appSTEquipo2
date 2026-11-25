@@ -1,19 +1,18 @@
-package com.example.appstequipo2.Modelo
+package com.example.appstequipo2.Redes
 
 import com.example.appstequipo2.intefaceAPI.ApiServicio
-import okhttp3.MediaType.Companion.toMediaType
 import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
-import okhttp3.MediaType.Companion.toMediaType
-import kotlin.lazy
-object RetrofitCliente {
-    private const val BASE_URL = "https://oswaldo.4buthh.com/cursos_api/"; //aqui va la url del api
 
-    private val jsonConfig= Json{
-        ignoreUnknownKeys=true
-        coerceInputValues=true
-        isLenient=true
+object RetrofitCliente {
+    private const val BASE_URL = "https://oswaldo.4buthh.com/capsule_api/"; //aqui va la url del api
+
+    private val jsonConfig= Json {
+        ignoreUnknownKeys = true
+        coerceInputValues = true
+        isLenient = true
     }
 
     val apiService: ApiServicio by lazy {

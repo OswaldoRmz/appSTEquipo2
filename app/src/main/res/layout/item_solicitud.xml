@@ -1,172 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="14dp"
-    app:cardBackgroundColor="#FFFFFF"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="0dp"
-    app:strokeColor="#E2E8F0"
-    app:strokeWidth="1dp">
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_outline"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Fila superior  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <!-- Fila superior: Etiqueta de tipo, folio y flecha -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/badgeTipo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="#EFF6FF"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp">
-
-                <TextView
-                    android:id="@+id/tvTipoSolicitud"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="4dp"
-                    android:text="Mantenimiento"
-                    android:textColor="#2563EB"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/tvFolioSolicitud"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="#ST-2024-0842"
-                android:textColor="#94A3B8"
-                android:textSize="12sp" />
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:contentDescription="Ver detalle"
-                android:src="@drawable/ic_derecha"
-                app:tint="#94A3B8" />
-        </LinearLayout>
-
-        <!-- Título de la solicitud -->
         <TextView
-            android:id="@+id/tvTituloSolicitud"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPrioridadBadge"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Sin conexión a internet"
-            android:textColor="#0F172A"
-            android:textSize="15sp"
+            android:background="@drawable/bg_badge_urgente"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:text="URGENTE"
+            android:textColor="#DC2626"
+            android:textSize="10sp"
             android:textStyle="bold" />
 
-        <!-- Ubicación o rango de fechas -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvFolioSolicitud"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="#ST-2024-0842"
+            android:textColor="#7B8794"
+            android:textSize="12sp" />
 
-            <ImageView
-                android:id="@+id/ivIconoDetalle"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:contentDescription="Detalle"
-                android:src="@drawable/ic_calendario"
-                app:tint="#94A3B8" />
-
-            <TextView
-                android:id="@+id/tvDetalleSolicitud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:text="Laboratorio de Cómputo 2"
-                android:textColor="#64748B"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <!-- Línea divisoria interna -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="12dp"
-            android:background="#F1F5F9" />
-
-        <!-- Fila inferior: Barra segmentada (4 pasos) y estado -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="136dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <View
-                    android:id="@+id/segPaso1"
-                    android:layout_width="0dp"
-                    android:layout_height="3.5dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="#2563EB" />
-
-                <View
-                    android:id="@+id/segPaso2"
-                    android:layout_width="0dp"
-                    android:layout_height="3.5dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="#2563EB" />
-
-                <View
-                    android:id="@+id/segPaso3"
-                    android:layout_width="0dp"
-                    android:layout_height="3.5dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="#2563EB" />
-
-                <View
-                    android:id="@+id/segPaso4"
-                    android:layout_width="0dp"
-                    android:layout_height="3.5dp"
-                    android:layout_weight="1"
-                    android:background="#E2E8F0" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tvEstadoSolicitud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• En proceso"
-                android:textColor="#2563EB"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="#9AA5B1" />
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+
+    <!-- Título del reporte -->
+    <TextView
+        android:id="@+id/tvTituloSolicitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Sin conexión a internet"
+        android:textColor="#16263E"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- Lugar y tiempo -->
+    <TextView
+        android:id="@+id/tvUbicacionTiempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Lab. Cómputo 2 · Hace 8 min"
+        android:textColor="#7B8794"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
+        android:background="#F0F2F5" />
+
+    <!-- Pie de tarjeta: Asignado + Estado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_person"
+            app:tint="#7B8794" />
+
+        <TextView
+            android:id="@+id/tvTecnicoAsignado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:text="Sin asignar"
+            android:textColor="#7B8794"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvEstadoTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuevo"
+            android:textColor="#238656"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

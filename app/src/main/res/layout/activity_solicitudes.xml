@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical">
+
+    <!-- ENCABEZADO BLANCO CON PESTAÑAS a coloresk -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:text="MESA DE SERVICIO"
+                    android:textColor="#238656"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Solicitudes"
+                    android:textColor="#16263E"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnFiltroSolicitudes"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_card_outline"
+                android:contentDescription="Filtrar solicitudes"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_filter"
+                app:tint="#4A5568" />
+        </LinearLayout>
+
+        <!-- Pestañas: Pendientes / En atención / Finalizadas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- Tab Pendientes -->
+            <LinearLayout
+                android:id="@+id/tabPendientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/tvTabPendientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pendientes"
+                        android:textColor="#16263E"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCountPendientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="12"
+                        android:textColor="#238656"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/indicadorPendientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="2.5dp"
+                    android:background="#238656" />
+            </LinearLayout>
+
+            <!-- Tab En atención -->
+            <LinearLayout
+                android:id="@+id/tabEnAtencion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/tvTabEnAtencion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="En atención"
+                        android:textColor="#7B8794"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvCountEnAtencion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="6"
+                        android:textColor="#238656"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/indicadorEnAtencion"
+                    android:layout_width="match_parent"
+                    android:layout_height="2.5dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <!-- Tab Finalizadas -->
+            <LinearLayout
+                android:id="@+id/tabFinalizadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTabFinalizadas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Finalizadas"
+                    android:textColor="#7B8794"
+                    android:textSize="13sp" />
+
+                <View
+                    android:id="@+id/indicadorFinalizadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="2.5dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E4E7EB" />
+
+    <!-- BUSCADOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_card_outline"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_search"
+            app:tint="#9AA5B1" />
+
+        <EditText
+            android:id="@+id/etBuscarSolicitud"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Buscar folio, usuario o área..."
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#16263E"
+            android:textColorHint="#9AA5B1"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- LISTA DE TICKETS -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="16dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_solicitud" />
+
+</LinearLayout>

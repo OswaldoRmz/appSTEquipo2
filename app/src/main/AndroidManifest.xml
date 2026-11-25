@@ -14,6 +14,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppSTEquipo2">
 
+        <!-- Pantalla principal (inicio de la aplicación) -->
         <activity
             android:name=".Vista.MainActivity"
             android:exported="true"
@@ -24,6 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login -->
+        <activity
+            android:name=".Vista.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- Principal de la app después de iniciar sesión -->
+        <activity
+            android:name=".Vista.InicioActivity"
+            android:exported="false" />
+        <!-- Registro de usuarios -->
+        <activity
+            android:name=".Vista.RegistroUsuarioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
