@@ -12,4 +12,41 @@ import com.example.appstequipo2.Presentador.clsPrincipalPresentador
 import com.example.appstequipo2.R
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var presenter: clsPrincipalPresentador
+    private lateinit var btnIniciarSesion: LinearLayout
+    private lateinit var btnCrearCuenta: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        btnIniciarSesion = findViewById(R.id.btnIniciarSesion)
+        btnCrearCuenta = findViewById(R.id.btnCrearCuenta)
+
+        presenter = clsPrincipalPresentador(this)
+        configurarListeners()
+    }
+
+    // Eventos de los botones de la pantalla principal
+    private fun configurarListeners() {
+        btnIniciarSesion.setOnClickListener { presenter.irALogin() }
+        btnCrearCuenta.setOnClickListener { presenter.irARegistro() }
+    }
+
+    // Los llama el presentador
+    fun abrirLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun abrirRegistro() {
+        val intent = Intent(this, RegistroUsuarioActivity::class.java)
+        startActivity(intent)
+    }
 }
