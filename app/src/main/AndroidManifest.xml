@@ -40,7 +40,11 @@
             android:name=".Vista.RegistroUsuarioActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
+        <!-- Solicitar préstamo de un equipo -->
+        <activity
+            android:name=".Vista.SolicitarPrestamoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

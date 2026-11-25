@@ -22,7 +22,6 @@ class clsUsuarioModelo {
                 try {
                     json.decodeFromString<dataCrearCuentaResponse>(response.errorBody()?.string() ?: "")
                 } catch (e: Exception) {
-                    // CAMBIO: ahora muestra el código HTTP para saber qué falló
                     dataCrearCuentaResponse(ok = false, mensaje = "No se pudo crear la cuenta (código ${response.code()})")
                 }
             }

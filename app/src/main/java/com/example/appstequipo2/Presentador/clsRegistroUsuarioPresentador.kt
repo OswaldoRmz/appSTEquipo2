@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 
 class clsRegistroUsuarioPresentador(private val vista: RegistroUsuarioActivity) {
     private val modelo = clsUsuarioModelo()
-
     // Botón "Crear mi cuenta"
     fun crearCuenta(
         nombres: String,
