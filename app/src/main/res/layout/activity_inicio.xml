@@ -384,7 +384,37 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- 2. Solicitudes -->
+        <!-- 2. Servicios -->
+        <LinearLayout
+            android:id="@+id/navServicios"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavServicios"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Servicios"
+                android:src="@drawable/ic_servicios"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavServicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Servicios"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 3. Solicitudes -->
         <LinearLayout
             android:id="@+id/navSolicitudes"
             android:layout_width="0dp"
@@ -414,7 +444,7 @@
                 android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- 3. Soporte -->
+        <!-- 4. Soporte -->
         <LinearLayout
             android:id="@+id/navSoporte"
             android:layout_width="0dp"
@@ -440,36 +470,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Soporte"
-                android:textColor="#94A3B8"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <!-- 4. Perfil -->
-        <LinearLayout
-            android:id="@+id/navPerfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/iconNavPerfil"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:contentDescription="Perfil"
-                android:src="@drawable/ic_perfil"
-                app:tint="#94A3B8" />
-
-            <TextView
-                android:id="@+id/lblNavPerfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Perfil"
                 android:textColor="#94A3B8"
                 android:textSize="11sp" />
         </LinearLayout>

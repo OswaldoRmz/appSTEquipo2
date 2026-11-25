@@ -457,12 +457,12 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CAMPO 5: Motivo del préstamo -->
+            <!-- CAMPO 5: Garantia  -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Motivo del préstamo"
+                android:text="Garantia"
                 android:textColor="#1E293B"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -483,7 +483,7 @@
                     android:layout_height="88dp"
                     android:background="@null"
                     android:gravity="top|start"
-                    android:hint="Describe brevemente el uso del equipo..."
+                    android:hint="Describe brevemente que se dejo en garantia..."
                     android:inputType="textMultiLine|textCapSentences"
                     android:padding="14dp"
                     android:textColor="#1E293B"
