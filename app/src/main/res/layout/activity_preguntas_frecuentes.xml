@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -151,66 +152,7 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- Chips de categoría -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:scrollbars="none">
-
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroupFaq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipSpacingHorizontal="8dp"
-                app:selectionRequired="true"
-                app:singleLine="true"
-                app:singleSelection="true">
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFaqTodas"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="38dp"
-                    android:checked="true"
-                    android:text="Todas"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    app:checkedIconVisible="false"
-                    app:chipBackgroundColor="#16263E"
-                    app:chipCornerRadius="20dp" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFaqPrestamos"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="38dp"
-                    android:text="Préstamos"
-                    android:textColor="#52606D"
-                    android:textSize="13sp"
-                    app:checkedIconVisible="false"
-                    app:chipBackgroundColor="#FFFFFF"
-                    app:chipCornerRadius="20dp"
-                    app:chipStrokeColor="#E4E7EB"
-                    app:chipStrokeWidth="1dp" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFaqMantenimiento"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="38dp"
-                    android:text="Mantenimiento"
-                    android:textColor="#52606D"
-                    android:textSize="13sp"
-                    app:checkedIconVisible="false"
-                    app:chipBackgroundColor="#FFFFFF"
-                    app:chipCornerRadius="20dp"
-                    app:chipStrokeColor="#E4E7EB"
-                    app:chipStrokeWidth="1dp" />
-            </com.google.android.material.chip.ChipGroup>
-        </HorizontalScrollView>
-
-        <!-- Encabezado de sección: Respuestas rápidas / Lo más consultado -->
+        <!-- Encabezado de sección -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -247,7 +189,7 @@
                 android:id="@+id/tvContadorPreguntas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6 preguntas"
+                android:text="0 preguntas"
                 android:textColor="#7B8794"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -273,7 +215,7 @@
         android:layout_height="1dp"
         android:background="#E2E8F0" />
 
-    <!-- Menú de navegación inferior integrado -->
+    <!-- Menú de navegación inferior: Inicio > Servicios > Solicitudes > Soporte -->
     <LinearLayout
         android:id="@+id/navInferior"
         android:layout_width="match_parent"

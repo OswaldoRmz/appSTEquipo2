@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -34,6 +35,7 @@ class InicioActivity : AppCompatActivity() {
 
     // Datos del usuario que inició sesión
     private var idUsuario = 0
+    private var nombres = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,14 +56,16 @@ class InicioActivity : AppCompatActivity() {
 
         // Saludo con el primer nombre y la inicial
         idUsuario = intent.getIntExtra("ID_USUARIO", 0)
-        val nombres = intent.getStringExtra("NOMBRES") ?: ""
+        nombres = intent.getStringExtra("NOMBRES") ?: ""
         val primerNombre = nombres.substringBefore(" ")
         tvGreeting.text = "Hola, $primerNombre"
         tvAvatarInitial.text = primerNombre.take(1).uppercase()
 
-        // Categorías en fila deslizable hacia los lados
+        // Categorías en fila deslizable hacia los lados (actualizado con la lambda)
         rvCategorias.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        adapterCategorias = CategoriasAdaptador(this, emptyList())
+        adapterCategorias = CategoriasAdaptador(emptyList()) { categoria ->
+            seleccionarCategoria(categoria)
+        }
         rvCategorias.adapter = adapterCategorias
 
         // Equipos en lista hacia abajo
@@ -91,6 +95,30 @@ class InicioActivity : AppCompatActivity() {
             if (texto.isNullOrEmpty()) {
                 presenter.buscar("")
             }
+        }
+
+        // --- NAVEGACIÓN DEL MENÚ INFERIOR ---
+        // Al botón "Inicio" no le ponemos clic porque ya estamos en esta pantalla.
+
+        findViewById<LinearLayout>(R.id.navServicios).setOnClickListener {
+            val intent = Intent(this, ServiciosActivity::class.java)
+            intent.putExtra("ID_USUARIO", idUsuario)
+            intent.putExtra("NOMBRES", nombres)
+            startActivity(intent)
+        }
+
+        findViewById<LinearLayout>(R.id.navSolicitudes).setOnClickListener {
+            val intent = Intent(this, SolicitudesActivity::class.java)//nos lleva a las solicitudes
+            intent.putExtra("ID_USUARIO", idUsuario)
+            intent.putExtra("NOMBRES", nombres)
+            startActivity(intent)
+        }
+
+        findViewById<LinearLayout>(R.id.navSoporte).setOnClickListener {
+            val intent = Intent(this, PreguntasFrecuentesActivity::class.java)
+            intent.putExtra("ID_USUARIO", idUsuario)
+            intent.putExtra("NOMBRES", nombres)
+            startActivity(intent)
         }
     }
 
