@@ -6,6 +6,9 @@ import com.example.appstequipo2.Modelo.dataCrearCuentaResponse
 import com.example.appstequipo2.Modelo.dataEquipoResponse
 import com.example.appstequipo2.Modelo.dataLoginRequest
 import com.example.appstequipo2.Modelo.dataLoginResponse
+import com.example.appstequipo2.Modelo.dataPrestamoRequest
+import com.example.appstequipo2.Modelo.dataPrestamosResponse
+
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -31,4 +34,8 @@ interface ApiServicio {
         @Query("id_categoria") idCategoria: Int? = null,
         @Query("buscar") buscar: String? = null
     ): Call<dataEquipoResponse>
+
+    // Solicitar el préstamo de un equipo (POST)
+    @POST("solicitar_prestamo.php")
+    fun solicitarPrestamo(@Body request: dataPrestamoRequest): Call<dataPrestamosResponse>
 }

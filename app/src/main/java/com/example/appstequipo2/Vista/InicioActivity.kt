@@ -38,6 +38,7 @@ class InicioActivity : AppCompatActivity() {
     private var nombres = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_inicio)
@@ -77,7 +78,10 @@ class InicioActivity : AppCompatActivity() {
         configurarListeners()
         presenter.iniciar()
     }
-
+    override fun onRestart() {
+        super.onRestart()
+        presenter.recargarEquipos()
+    }
     private fun configurarListeners() {
         // Buscar al presionar la lupa del teclado
         etSearch.setOnEditorActionListener { _, actionId, _ ->
@@ -89,8 +93,6 @@ class InicioActivity : AppCompatActivity() {
                 false
             }
         }
-
-        // Si borra todo el texto, vuelve a mostrar todos los equipos
         etSearch.doAfterTextChanged { texto ->
             if (texto.isNullOrEmpty()) {
                 presenter.buscar("")

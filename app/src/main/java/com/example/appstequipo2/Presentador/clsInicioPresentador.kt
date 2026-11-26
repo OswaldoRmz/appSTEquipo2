@@ -47,7 +47,10 @@ class clsInicioPresentador(private val vista: InicioActivity) {
     fun seleccionarEquipo(equipo: dataEquipo) {
         vista.abrirSolicitarPrestamo(equipo.idEquipo, equipo.nombre, equipo.codigo)
     }
-
+    // Al regresar de otra pantalla, vuelve a traer los equipos con los mismos filtros
+    fun recargarEquipos() {
+        cargarEquipos()
+    }
     // Trae los equipos con los filtros que estén puestos (categoría y búsqueda juntos)
     private fun cargarEquipos() {
         CoroutineScope(Dispatchers.Main).launch {
