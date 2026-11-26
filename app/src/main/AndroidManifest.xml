@@ -45,6 +45,23 @@
             android:name=".Vista.SolicitarPrestamoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <!-- Catálogo de servicios -->
+        <activity
+            android:name=".Vista.ServiciosActivity"
+            android:exported="false" />
+        <!-- Solicitar un servicio -->
+        <activity
+            android:name=".Vista.SolicitarServicioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- Mis solicitudes -->
+        <activity
+            android:name=".Vista.SolicitudesActivity"
+            android:exported="false" />
+        <!-- Preguntas frecuentes -->
+        <activity
+            android:name=".Vista.PreguntasFrecuentesActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

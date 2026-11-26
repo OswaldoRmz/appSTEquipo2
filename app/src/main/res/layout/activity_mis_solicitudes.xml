@@ -2,191 +2,230 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#F8FAFC"
+    tools:context=".Vista.SolicitudesActivity">
 
-    <!-- Encabezado: Etiqueta superior, Título y Botón de búsqueda -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contenedorEncabezado"
+    <!-- ENCABEZADO BLANCO SUPERIOR -->
+    <LinearLayout
+        android:id="@+id/headerSolicitudes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
         android:paddingHorizontal="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="12dp"
+        android:paddingTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvSubtituloSuperior"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:letterSpacing="0.08"
-            android:text="SEGUIMIENTO"
-            android:textColor="#188653"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvTituloPantalla"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Mis solicitudes"
-            android:textColor="#0F172A"
-            android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtituloSuperior" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btnBuscar"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/tvTituloPantalla"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvSubtituloSuperior"
-            app:strokeColor="#E2E8F0"
-            app:strokeWidth="1dp">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:contentDescription="Buscar solicitud"
-                android:src="@drawable/ic_buscar"
-                app:tint="#475569" />
-        </com.google.android.material.card.MaterialCardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- Barra de pestañas: Activas (3), Resueltas, Todas -->
-    <LinearLayout
-        android:id="@+id/contenedorPestanas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contenedorEncabezado">
-
-        <!-- Pestaña 1: Activas -->
+        <!-- Fila: SEGUIMIENTO / Mis solicitudes + Botón lupa -->
         <LinearLayout
-            android:id="@+id/tabActivas"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingVertical="10dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvTabActivas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Activas"
-                    android:textColor="#0F172A"
-                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:text="SEGUIMIENTO"
+                    android:textColor="#188653"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
 
-                <com.google.android.material.card.MaterialCardView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    app:cardBackgroundColor="#DCFCE7"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="0dp">
+                    android:layout_marginTop="2dp"
+                    android:text="Mis solicitudes"
+                    android:textColor="#0F172A"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Botón cuadrado de búsqueda -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnToggleBuscar"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Buscar"
+                    android:src="@drawable/ic_search"
+                    app:tint="#475569" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Barra de búsqueda oculta que aparece al tocar la lupa -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBuscadorSolicitudes"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#F8FAFC"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#CBD5E1"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/etBuscarSolicitud"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Buscar por folio, equipo o servicio..."
+                android:inputType="text"
+                android:paddingHorizontal="14dp"
+                android:singleLine="true"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:textSize="13sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- PESTAÑAS: Activas | Resueltas | Todas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <!-- Tab 1: Activas -->
+            <LinearLayout
+                android:id="@+id/tabActivas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
 
                     <TextView
-                        android:id="@+id/tvContadorActivas"
+                        android:id="@+id/tvTabActivas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Activas"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBadgeActivas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_help_banner"
                         android:paddingHorizontal="7dp"
                         android:paddingVertical="1dp"
-                        android:text="3"
+                        android:text="0"
                         android:textColor="#188653"
                         android:textSize="11sp"
                         android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/indActivas"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#188653" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/indicadorActivas"
-                android:layout_width="match_parent"
-                android:layout_height="2.5dp"
-                android:background="#188653" />
-        </LinearLayout>
-
-        <!-- Pestaña 2: Resueltas -->
-        <LinearLayout
-            android:id="@+id/tabResueltas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvTabResueltas"
+            <!-- Tab 2: Resueltas -->
+            <LinearLayout
+                android:id="@+id/tabResueltas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
-                android:text="Resueltas"
-                android:textColor="#64748B"
-                android:textSize="13sp" />
+                android:layout_marginEnd="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
 
-            <View
-                android:id="@+id/indicadorResueltas"
-                android:layout_width="match_parent"
-                android:layout_height="2.5dp"
-                android:background="@android:color/transparent" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvTabResueltas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Resueltas"
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
 
-        <!-- Pestaña 3: Todas -->
-        <LinearLayout
-            android:id="@+id/tabTodas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <View
+                    android:id="@+id/indResueltas"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#188653"
+                    android:visibility="invisible" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvTabTodas"
+            <!-- Tab 3: Todas -->
+            <LinearLayout
+                android:id="@+id/tabTodas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
-                android:text="Todas"
-                android:textColor="#64748B"
-                android:textSize="13sp" />
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
 
-            <View
-                android:id="@+id/indicadorTodas"
-                android:layout_width="match_parent"
-                android:layout_height="2.5dp"
-                android:background="@android:color/transparent" />
+                <TextView
+                    android:id="@+id/tvTabTodas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Todas"
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/indTodas"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#188653"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 
     <!-- Línea divisoria bajo pestañas -->
     <View
-        android:id="@+id/divisorSuperior"
+        android:id="@+id/dividerTop"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#E2E8F0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contenedorPestanas" />
+        app:layout_constraintTop_toBottomOf="@id/headerSolicitudes" />
 
-    <!-- Listado de solicitudes -->
+    <!-- LISTA DE SOLICITUDES -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSolicitudes"
         android:layout_width="0dp"
@@ -194,48 +233,42 @@
         android:clipToPadding="false"
         android:paddingHorizontal="20dp"
         android:paddingTop="16dp"
-        android:paddingBottom="88dp"
-        app:layout_constraintBottom_toTopOf="@id/divisorInferior"
+        android:paddingBottom="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divisorSuperior" />
+        app:layout_constraintTop_toBottomOf="@id/dividerTop"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_solicitud" />
 
-    <!-- Botón flotante (+) inferior derecho "+"-->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnNuevaSolicitud"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="18dp"
-        app:cardBackgroundColor="#0D2847"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintBottom_toTopOf="@id/divisorInferior"
+    <!-- Texto si no hay solicitudes en esa pestaña -->
+    <TextView
+        android:id="@+id/tvSinSolicitudes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No tienes solicitudes en esta sección"
+        android:textColor="#64748B"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:strokeWidth="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerTop" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:contentDescription="Nueva solicitud"
-            android:src="@drawable/ic_agregar"
-            app:tint="#FFFFFF" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Divisor sobre menú inferior -->
+    <!-- Línea divisoria superior del menú inferior -->
     <View
-        android:id="@+id/divisorInferior"
+        android:id="@+id/dividerBottom"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#E2E8F0"
-        app:layout_constraintBottom_toTopOf="@id/navInferior"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Menú de navegación inferior integrado -->
+    <!-- Menú de navegación inferior: Inicio > Servicios > Solicitudes (Activo) > Soporte -->
     <LinearLayout
-        android:id="@+id/navInferior"
+        android:id="@+id/bottomNavigation"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:background="#FFFFFF"

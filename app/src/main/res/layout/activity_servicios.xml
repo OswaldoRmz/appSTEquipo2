@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".Vista.ServiciosActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
+
+            <!-- Saludo y Avatar con punto verde -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hola, Nombre"
+                    android:textColor="#0F172A"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        app:cardBackgroundColor="#DCFCE7"
+                        app:cardCornerRadius="21dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/tvAvatarInitial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="N"
+                            android:textColor="#0D2847"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="bottom|end"
+                        app:cardBackgroundColor="#188653"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFFFFF"
+                        app:strokeWidth="2dp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Barra de búsqueda -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="Buscar"
+                        android:src="@drawable/ic_search"
+                        app:tint="#94A3B8" />
+
+                    <EditText
+                        android:id="@+id/etSearchServicios"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar servicio o soporte..."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="#0F172A"
+                        android:textColorHint="#94A3B8"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Título Categorías -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Categorías"
+                android:textColor="#0F172A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Categorías de servicios (se cargan desde la base de datos en fila deslizable) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategoriasServicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:minHeight="44dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_categoria" />
+
+            <!-- Encabezado Servicios disponibles -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Servicios disponibles"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalServicios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 servicios"
+                    android:textColor="#64748B"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Listado de servicios disponibles -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvServicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_servicio" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Línea divisoria superior del menú inferior -->
+    <View
+        android:id="@+id/dividerBottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E2E8F0"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Menú de navegación inferior: Inicio > Servicios (Activo) > Solicitudes > Soporte -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 1. Inicio -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavInicio"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Inicio"
+                android:src="@drawable/ic_inicio"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Inicio"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 2. Servicios (Activo) -->
+        <LinearLayout
+            android:id="@+id/navServicios"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavServicios"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Servicios"
+                android:src="@drawable/ic_servicios"
+                app:tint="#188653" />
+
+            <TextView
+                android:id="@+id/lblNavServicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Servicios"
+                android:textColor="#188653"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 3. Solicitudes -->
+        <LinearLayout
+            android:id="@+id/navSolicitudes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavSolicitudes"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Solicitudes"
+                android:src="@drawable/ic_solicitudes"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavSolicitudes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Solicitudes"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 4. Soporte -->
+        <LinearLayout
+            android:id="@+id/navSoporte"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNavSoporte"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Soporte"
+                android:src="@drawable/ic_soporte"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:id="@+id/lblNavSoporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Soporte"
+                android:textColor="#94A3B8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
