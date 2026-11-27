@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -225,7 +226,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerSolicitudes" />
 
-    <!-- LISTA DE SOLICITUDES -->
+    <!-- ESPACIO PARA CARGAR LAS SOLICITUDES DESDE LA BASE DE DATOS -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSolicitudes"
         android:layout_width="0dp"
@@ -234,13 +235,10 @@
         android:paddingHorizontal="20dp"
         android:paddingTop="16dp"
         android:paddingBottom="20dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/dividerBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dividerTop"
-        tools:itemCount="4"
-        tools:listitem="@layout/item_solicitud" />
+        app:layout_constraintTop_toBottomOf="@id/dividerTop" />
 
     <!-- Texto si no hay solicitudes en esa pestaña -->
     <TextView

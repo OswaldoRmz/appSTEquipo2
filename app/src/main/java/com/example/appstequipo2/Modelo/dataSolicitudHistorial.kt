@@ -15,5 +15,6 @@ data class dataSolicitudHistorial(
     @SerialName("detalle_extra_1") val detalleExtra1: String = "",
     @SerialName("detalle_extra_2") val detalleExtra2: String = "",
 
+    //es local y se usa cuando algo no va ser estatico puede o no estar activo
     @Transient var desplegada: Boolean = false
 )
