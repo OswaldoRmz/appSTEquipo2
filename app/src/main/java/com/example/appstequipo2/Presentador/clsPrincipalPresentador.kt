@@ -9,4 +9,8 @@ class clsPrincipalPresentador(private val vista: MainActivity) {
     fun irARegistro() {
         vista.abrirRegistro()
     }
+    //Boton de ayuda para que te lleve a las preguntas frecuentes
+    fun  irAyuda(){
+        vista.abrirAyuda()
+    }
 }

@@ -38,7 +38,8 @@
                     android:layout_weight="1"
                     android:text="Hola, Nombre"
                     android:textColor="#0F172A"
-                    android:textSize="22sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <FrameLayout
                     android:layout_width="44dp"
