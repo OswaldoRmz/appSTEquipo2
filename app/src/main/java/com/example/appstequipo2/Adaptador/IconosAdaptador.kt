@@ -1,16 +1,23 @@
 package com.example.appstequipo2.Adaptador
+
 import com.example.appstequipo2.R
-object IconosAdaptador{
+
+object IconosAdaptador {
     fun obtenerIcono(nombreCategoria: String): Int {
         val nombre = nombreCategoria.lowercase()
         return when {
             nombre == "todos" -> R.drawable.ic_inventario
+            // Categorías de equipos
             nombre.contains("cómputo") || nombre.contains("computo") -> R.drawable.ic_desktop_windows
             nombre.contains("audio") || nombre.contains("video") -> R.drawable.ic_proyector
             nombre.contains("redes") -> R.drawable.ic_swap_horiz
             nombre.contains("cable") -> R.drawable.ic_cable
             nombre.contains("consumible") -> R.drawable.ic_extension
             nombre.contains("electr") -> R.drawable.ic_monitor
+            // Categorías de servicios
+            nombre.contains("mantenimiento") -> R.drawable.ic_servicios
+            nombre.contains("reparación") || nombre.contains("reparacion") -> R.drawable.ic_support_agent
+            nombre.contains("licencia") -> R.drawable.ic_verified_user
             else -> R.drawable.ic_inventario   // categorías nuevas que dé de alta el admin
         }
     }

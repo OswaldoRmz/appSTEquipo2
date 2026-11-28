@@ -1,6 +1,7 @@
 package com.example.appstequipo2.Vista
 
 import android.content.Intent
+import com.example.appstequipo2.Presentador.clsSolicitudesPresentador
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -24,7 +25,7 @@ import com.example.appstequipo2.R
 import com.google.android.material.card.MaterialCardView
 
 class SolicitudesActivity : AppCompatActivity() {
-
+    private lateinit var presenter: clsSolicitudesPresentador
     private lateinit var rvSolicitudes: RecyclerView
     private lateinit var adapterSolicitudes: SolicitudesAdaptador
     private lateinit var tvSinSolicitudes: TextView
@@ -56,6 +57,7 @@ class SolicitudesActivity : AppCompatActivity() {
             insets
         }
 
+        // 1. Primero se lee el usuario que manda la pantalla anterior
         idUsuario = intent.getIntExtra("ID_USUARIO", 0)
         nombres = intent.getStringExtra("NOMBRES") ?: ""
 
@@ -78,8 +80,9 @@ class SolicitudesActivity : AppCompatActivity() {
 
         configurarListeners()
 
-        // Aquí llamas a tu presentador pasando 'idUsuario' para traer órdenes y préstamos de tus 2 PHP:
-        // presenter.cargarHistorial(idUsuario)
+        // 2. Al final, con el usuario ya leído, se trae su historial
+        presenter = clsSolicitudesPresentador(this)
+        presenter.cargarHistorial(idUsuario)
     }
 
     private fun configurarListeners() {
@@ -105,11 +108,9 @@ class SolicitudesActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.tabTodas).setOnClickListener { cambiarPestana("TODAS") }
 
         // --- NAVEGACIÓN DEL MENÚ INFERIOR ---
+        // Inicio siempre está abajo de esta pantalla: solo cerramos esta
         findViewById<LinearLayout>(R.id.navInicio).setOnClickListener {
-            val intent = Intent(this, InicioActivity::class.java)
-            intent.putExtra("ID_USUARIO", idUsuario)
-            intent.putExtra("NOMBRES", nombres)
-            startActivity(intent)
+            finish()
         }
 
         findViewById<LinearLayout>(R.id.navServicios).setOnClickListener {
@@ -117,6 +118,7 @@ class SolicitudesActivity : AppCompatActivity() {
             intent.putExtra("ID_USUARIO", idUsuario)
             intent.putExtra("NOMBRES", nombres)
             startActivity(intent)
+            finish()   // cerramos esta para no apilar pantallas
         }
 
         findViewById<LinearLayout>(R.id.navSoporte).setOnClickListener {
@@ -124,6 +126,7 @@ class SolicitudesActivity : AppCompatActivity() {
             intent.putExtra("ID_USUARIO", idUsuario)
             intent.putExtra("NOMBRES", nombres)
             startActivity(intent)
+            finish()
         }
     }
 

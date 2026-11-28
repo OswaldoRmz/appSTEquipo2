@@ -6,9 +6,14 @@ import com.example.appstequipo2.Modelo.dataCrearCuentaResponse
 import com.example.appstequipo2.Modelo.dataEquipoResponse
 import com.example.appstequipo2.Modelo.dataLoginRequest
 import com.example.appstequipo2.Modelo.dataLoginResponse
+import com.example.appstequipo2.Modelo.dataMisOrdenesResponse
+import com.example.appstequipo2.Modelo.dataMisPrestamosResponse
+import com.example.appstequipo2.Modelo.dataOrdenResponse
+import com.example.appstequipo2.Modelo.dataOrdenServicio
 import com.example.appstequipo2.Modelo.dataPrestamoRequest
 import com.example.appstequipo2.Modelo.dataPrestamosResponse
-
+import com.example.appstequipo2.Modelo.dataServicioResponse
+import com.example.appstequipo2.Modelo.dataPregunta
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -38,4 +43,23 @@ interface ApiServicio {
     // Solicitar el préstamo de un equipo (POST)
     @POST("solicitar_prestamo.php")
     fun solicitarPrestamo(@Body request: dataPrestamoRequest): Call<dataPrestamosResponse>
+
+    // Catálogo de servicios activos
+    @GET("obtener_servicios.php")
+    fun obtenerServicios(): Call<dataServicioResponse>
+
+    // Crear una orden de servicio (POST)
+    @POST("solicitar_servicio.php")
+    fun solicitarServicio(@Body request: dataOrdenServicio): Call<dataOrdenResponse>
+
+    // Historial de órdenes de servicio del cliente
+    @GET("mis_ordenes.php")
+    fun obtenerMisOrdenes(@Query("id_cliente") idCliente: Int): Call<dataMisOrdenesResponse>
+
+    // Historial de préstamos del cliente
+    @GET("mis_prestamos.php")
+    fun obtenerMisPrestamos(@Query("id_cliente") idCliente: Int): Call<dataMisPrestamosResponse>
+    // Preguntas frecuentes activas (responde una lista directa, sin status/data)
+    @GET("faq.php")
+    fun obtenerPreguntas(): Call<List<dataPregunta>>
 }

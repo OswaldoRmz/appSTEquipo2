@@ -1,12 +1,16 @@
-# Add project specific R8 rules here.
-# AGP will combine all keep rule files in src/main/keepRules to pass to R8
-#
-# For more details, see
-#   https://d.android.com/r/tools/r8/keep-rules
+# Mantener los campos serializables para la API
+-keepclassmembers class * {
+   @kotlinx.serialization.SerialName <fields>;
+}
+-keepattributes Annotation,Signature,InnerClasses,EnclosingMethod
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Mantener tus modelos de datos
+-keep class com.example.appcursosequipo2.model.** { *; }
+
+# Excepciones para Retrofit y OkHttp
+-keepattributes Signature
+-keepattributes Annotation
+-keep class retrofit2.** { *; }
+-dontwarn retrofit2.**
+-keep class okhttp3.** { *; }
+-dontwarn okhttp3.**
